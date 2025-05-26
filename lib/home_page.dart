@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
+
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -13,29 +17,50 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Color(0xFFf4eedd),
-        //appBar: buildAppBar(),
-        body: buildListview(),
+        body: buildContent(),
       ),
     );
   }
 
-  buildListview() {
-    return ListView(
-      children: [
-        Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: 100),
-              Text('Flowers Lung', style: TextStyle(
-                fontSize: 50,
-              ),),
-              SizedBox(height: 40),
-              Image.asset('assets/images/PulmaoComFlores.png', width: 340),
-            ],
+
+  Widget buildContent() {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            'Flowers Lung',
+            style: GoogleFonts.lobster(
+              color: Colors.black,
+              fontSize: 70,
+            ),
           ),
-        ),
-      ],
+          SizedBox(),
+          Image.asset(
+            'assets/images/PulmaoComFlores.png',
+            width: 320,
+          ),
+          SizedBox(),
+          ElevatedButton(
+            onPressed: () {
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFFD7AE5E),
+              padding:EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              elevation: 3,
+            ),
+            child: Text('Entrar', style: GoogleFonts.openSans(
+              color: Colors.black,
+              fontSize: 24,
+              fontWeight: FontWeight.w700,
+            ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
