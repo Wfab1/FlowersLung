@@ -34,7 +34,7 @@ class _MenuPageState extends State<MenuPage> {
         'Flowers Lung',
         style: GoogleFonts.lobster(
           color: Color(0xFFE1A100),
-          fontSize: 40,
+          fontSize: 45,
         ),
       ),
     );
