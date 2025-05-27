@@ -31,7 +31,7 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
       centerTitle: false,
       backgroundColor: Color(0xFFf4eedd),
       title: Text(
-        'Flowers Lung',
+        'Sintomas',
         style: GoogleFonts.lobster(
           color: Color(0xFFE1A100),
           fontSize: 45,
