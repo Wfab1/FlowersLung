@@ -28,7 +28,7 @@ class _MenuInfoPageState extends State<MenuInfoPage> {
       toolbarHeight: 100,
       actions: [
         Container(
-          child: Image.asset('assets/images/PulmaoComFlores.png', width: 80),
+         // child: Image.asset('assets/images/PulmaoComFlores.png', width: 80),
         ),
       ],
       centerTitle: true,
