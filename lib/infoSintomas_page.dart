@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class InfoSintomasPage extends StatefulWidget {
   const InfoSintomasPage({super.key});
   @override
@@ -11,10 +10,15 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        backgroundColor: Color(0xFFd3b360),
-        appBar: buildAppBar(),
-        body: buildListView(),
+      child: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage('assets/images/FundoPulmaoVermelho.jpg'))
+        ),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: buildAppBar(),
+          body: buildListView(),
+        ),
       ),
     );
   }
@@ -24,84 +28,182 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
       toolbarHeight: 100,
       actions: [
         Container(
-          //child: Image.asset('assets/images/FundoBegePulmao.jpg', width: 100, height: 100,),
-          child: Image.asset('assets/images/PulmaoComFlores.png', width: 80),
+          // child: Image.asset('assets/images/PulmaoComFlores.png', width: 80),
         ),
       ],
-      centerTitle: false,
-      backgroundColor: Color(0xFFf4eedd),
+      centerTitle: true,
+      backgroundColor: Color(0xFFa54d3b),
       title: Text(
         'Sintomas',
         style: GoogleFonts.lobster(
-          color: Color(0xFFE1A100),
+          color: Color(0xFFF4EEDD),
           fontSize: 45,
+          fontWeight: FontWeight.w700,
         ),
       ),
     );
   }
 
-  buildListView(){
+  buildListView() {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Column(
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Container(
               padding: EdgeInsets.all(8),
-              child: Image.asset('assets/images/IconPulmao.png', width: 80),
+              width: 110,
+              height: 500,
               decoration: BoxDecoration(
-                  color: Color(0xFFf4eedd),
-                  borderRadius: BorderRadius.circular(16)
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Image.asset(
+                  'assets/images/Fumante.png',
+                  width: 100,
+                  height: 500,
+                ),
               ),
             ),
-            Text('Informações', style: GoogleFonts.openSans(
-                color: Colors.black,
-                fontSize: 24,
-                fontWeight: FontWeight.w700),
+            SizedBox(width: 8),
+            Container(
+              width: 250,
+              height: 500,
+              padding: EdgeInsets.all(8),
+              margin: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: Color(0xFFD7AE5E),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'O câncer de pulmão pode se manifestar de maneira silenciosa no início, mas alguns sintomas podem indicar que algo não está bem. Identificar essas alterações precocemente faz toda a diferença no diagnóstico e no tratamento. Os sinais mais comuns são:',
+                    textAlign: TextAlign.justify,
+                    style: GoogleFonts.adamina(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    '• Dores locais: costela ou peito;',
+                    textAlign: TextAlign.justify,
+                    style: GoogleFonts.adamina(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    '• Tipos de dor: aguda ou incômoda;',
+                    textAlign: TextAlign.justify,
+                    style: GoogleFonts.adamina(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    '• Dores circunstanciais: ao respirar;',
+                    textAlign: TextAlign.justify,
+                    style: GoogleFonts.adamina(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    '• Tosse: com catarro, seca, com sangue, forte ou crônica;',
+                    textAlign: TextAlign.justify,
+                    style: GoogleFonts.adamina(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    '• No sistema respiratório: falta de ar, infecções respiratórias frequentes ou respiração sibilante;',
+                    textAlign: TextAlign.justify,
+                    style: GoogleFonts.adamina(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    '• No corpo: fadiga ou perda de apetite;',
+                    textAlign: TextAlign.justify,
+                    style: GoogleFonts.adamina(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    '• Também é comum: fraqueza, inchaço dos gânglios, perda de peso ou pressão no peito.',
+                    textAlign: TextAlign.justify,
+                    style: GoogleFonts.adamina(
+                      color: Colors.black,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
-        SizedBox(height: 24),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 64,
-          children: [
-            Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(8),
-                  child: Image.asset('assets/images/IconJogar.png', width: 80),
-                  decoration: BoxDecoration(
-                      color: Color(0xFFf4eedd),
-                      borderRadius: BorderRadius.circular(16)
+        Spacer(),
+        Padding(
+          padding: EdgeInsets.only(bottom: 45),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+                decoration: BoxDecoration(
+                  color: Color(0xFFa54d3b),
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Text(
+                  'Tela Inicial',
+                  style: GoogleFonts.openSans(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-                Text('Jogar', style: GoogleFonts.openSans(
-                    color: Colors.black,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700),
+              ),
+              SizedBox(width: 16),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 14),
+                decoration: BoxDecoration(
+                  color: Color(0xFFa54d3b),
+                  borderRadius: BorderRadius.circular(30),
                 ),
-              ],
-            ),
-            Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(8),
-                  child: Image.asset('assets/images/IconComunidade.png', width: 80),
-                  decoration: BoxDecoration(
-                      color: Color(0xFFf4eedd),
-                      borderRadius: BorderRadius.circular(16)
+                child: Text(
+                  'Voltar',
+                  style: GoogleFonts.openSans(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-                Text('Comunidade', style: GoogleFonts.openSans(
-                    color: Colors.black,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700),
-                ),
-              ],
-            ),
-          ],
-        )
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
