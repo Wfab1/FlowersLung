@@ -63,7 +63,6 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
                 child: Image.asset(
                   'assets/images/Fumante.png',
                   width: 100,
-                  height: 500,
                 ),
               ),
             ),
