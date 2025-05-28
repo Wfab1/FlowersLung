@@ -1,29 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class InfoSintomasPage extends StatefulWidget {
-  const InfoSintomasPage({super.key});
+
+class InfoApoioPage extends StatefulWidget {
+  const InfoApoioPage({super.key});
   @override
-  State<InfoSintomasPage> createState() => _InfoSintomasPage();
+  State<InfoApoioPage> createState() => _InfoApoioPage();
 }
 
-class _InfoSintomasPage extends State<InfoSintomasPage> {
+
+class _InfoApoioPage extends State<InfoApoioPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/images/FundoPulmaoVermelho.jpg'),
-          fit: BoxFit.cover,
+    return SafeArea(
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/FundoPulmaoVermelho.jpg'),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: buildAppBar(),
-        body: buildListView(),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: buildAppBar(),
+          body: buildListView(),
+        ),
       ),
     );
   }
+
 
   buildAppBar() {
     return AppBar(
@@ -37,9 +42,9 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
             width: 80,
             height: 80,
           ),
-          SizedBox(width: 30),
+          SizedBox(width: 60),
           Text(
-            'Sintomas',
+            'Apoio',
             style: GoogleFonts.lobster(
               color: Color(0xFFF4EEDD),
               fontSize: 45,
@@ -50,6 +55,7 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
       ),
     );
   }
+
 
   buildListView() {
     return Column(
@@ -62,7 +68,10 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
             children: [
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Image.asset('assets/images/Fumante.png', height: 225),
+                child: Image.asset(
+                  'assets/images/ApoioMeninasAbracadas.png',
+                  height: 225,
+                ),
               ),
               Expanded(
                 child: Container(
@@ -75,7 +84,11 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
                   child: ListView(
                     children: [
                       Text(
-                        'O câncer de pulmão pode se manifestar de maneira silenciosa no início, mas alguns sintomas podem indicar que algo não está bem. Identificar essas alterações de forma precoce faz toda a diferença no diagnóstico e no tratamento. Os sinais mais comuns são:',
+                        'Receber o diagnóstico de câncer de pulmão é um momento difícil, que'
+                            'pode afetar várias áreas da vida: a saúde, as emoções, o convívio'
+                            'social e a situação financeira. Por isso, é  importante oferecer'
+                            'apoio verdadeiro e constante, por meio de gestos simples. '
+                            'Alguns exemplos são:',
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.adamina(
                           color: Colors.black,
@@ -85,7 +98,10 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
                       ),
                       SizedBox(height: 8),
                       Text(
-                        '• Dores locais: costela ou peito;',
+                        '• Apoio emocional faz diferença. Muitas vezes, a pessoa precisa apenas '
+                            'de alguém que a ouça, esteja ao seu lado e a incentive a não perder '
+                            'a esperança. Grupos de apoio e conversas com profissionais também '
+                            'ajudam a lidar com os medos e incertezas.',
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.adamina(
                           color: Colors.black,
@@ -93,59 +109,9 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
                           fontWeight: FontWeight.w700,
                         ),
                       ),
-                      SizedBox(height: 8),
+                      SizedBox(height: 6),
                       Text(
-                        '• Tipos de dor: aguda ou incômoda;',
-                        textAlign: TextAlign.justify,
-                        style: GoogleFonts.adamina(
-                          color: Colors.black,
-                          fontSize: 19.5,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        '• Dores circunstanciais: ao respirar;',
-                        textAlign: TextAlign.justify,
-                        style: GoogleFonts.adamina(
-                          color: Colors.black,
-                          fontSize: 19.5,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        '• Tosse: com catarro, seca, com sangue, forte ou crônica;',
-                        textAlign: TextAlign.justify,
-                        style: GoogleFonts.adamina(
-                          color: Colors.black,
-                          fontSize: 19.5,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        '• No sistema respiratório: falta de ar, infecções respiratórias frequentes ou respiração sibilante;',
-                        textAlign: TextAlign.justify,
-                        style: GoogleFonts.adamina(
-                          color: Colors.black,
-                          fontSize: 19.5,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        '• No corpo: fadiga ou perda de apetite;',
-                        textAlign: TextAlign.justify,
-                        style: GoogleFonts.adamina(
-                          color: Colors.black,
-                          fontSize: 19.5,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      Text(
-                        '• Também é comum: fraqueza, inchaço dos gânglios, perda de peso ou pressão no peito.',
+                        '• Apoie no dia a dia. Além do tratamento, existem desafios práticos. É possível ajudar buscando informações sobre programas gratuitos que oferecem medicamentos, transporte, fraldas, suplementos ou até atendimento psicológico, como faz o Grupo de Apoio a Pessoas com Câncer (GAPC).',
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.adamina(
                           color: Colors.black,
@@ -160,7 +126,6 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
             ],
           ),
         ),
-
         Padding(
           padding: EdgeInsets.only(bottom: 16),
           child: Row(
