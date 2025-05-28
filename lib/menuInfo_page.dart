@@ -28,7 +28,7 @@ class _MenuInfoPageState extends State<MenuInfoPage> {
       toolbarHeight: 100,
       actions: [
         Container(
-         // child: Image.asset('assets/images/PulmaoComFlores.png', width: 80),
+         child: Image.asset('assets/images/PulmaoComFlores.png', width: 50),
         ),
       ],
       centerTitle: true,
@@ -43,9 +43,6 @@ class _MenuInfoPageState extends State<MenuInfoPage> {
       ),
     );
   }
-
-
-
 
   buildListView(){
     return Column(
@@ -135,10 +132,31 @@ class _MenuInfoPageState extends State<MenuInfoPage> {
             ),
           ],
         ),
-        SizedBox(height: 80),
+        SizedBox(height: 120),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
-
+          children: [
+            Column(
+              children: [
+                SizedBox(height: 4),
+                Container(
+                  width: 100,
+                  height: 60,
+                  padding: EdgeInsets.all(8),
+                  margin: EdgeInsets.all(8),
+                  child:Text('Sair', style: GoogleFonts.adamina(
+                      color: Color(0xFFF4EEDD),
+                      fontSize: 32,
+                      fontWeight: FontWeight.w700),
+                  ),
+                  decoration: BoxDecoration(
+                      color: Color(0xFFa54d3b),
+                      borderRadius: BorderRadius.circular(16)
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ],
     );
