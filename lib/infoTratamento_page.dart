@@ -15,6 +15,7 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/FundoPulmaoVermelho.jpg'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Scaffold(
