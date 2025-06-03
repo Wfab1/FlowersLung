@@ -1,7 +1,7 @@
-import 'package:flowerslung/menu_page.dart';
+import 'package:flowerslung/escreverMensagem_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: MenuPage(),)
+  runApp(MaterialApp(home: EscreverMensagemPage(),)
   );
 }
