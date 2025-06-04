@@ -32,7 +32,15 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
       toolbarHeight: 100,
       centerTitle: true,
       backgroundColor: Color(0xFFa54d3b),
-      title: Text(
+      title: Row(
+        children: [
+        Image.asset(
+        'assets/images/PulmaoComFlores.png',
+        width: 80,
+        height: 80,
+      ),
+      SizedBox(width: 30),
+      Text(
         'Tratamento',
         style: GoogleFonts.lobster(
           color: Color(0xFFF4EEDD),
@@ -40,7 +48,9 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
           fontWeight: FontWeight.w700,
         ),
       ),
-    );
+      ],
+      ) ,
+      );
   }
 
   buildListView() {
