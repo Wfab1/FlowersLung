@@ -1,9 +1,9 @@
+import 'package:flowerslung/partePulmaoBronquiolos_page.dart';
 import 'package:flutter/material.dart';
-import 'mensagemRespostaErradaJogo_page.dart';
 
 
 void main() {
-  runApp(MaterialApp(home: MensagemRespostaErradaJogoPage(),)
+  runApp(MaterialApp(home: partePulmaoBronquiolosPage(),)
   );
 
 
