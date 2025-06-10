@@ -38,7 +38,7 @@ class _partePulmaoBronquioPage extends State<partePulmaoBronquioPage> {
             'Pulmão',
             style: GoogleFonts.lobster(
               color: Color(0xFFF4EEDD),
-              fontSize: 45,
+              fontSize: 50,
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -59,7 +59,7 @@ class _partePulmaoBronquioPage extends State<partePulmaoBronquioPage> {
               Container(
                 padding: EdgeInsets.only(top: 12),
                 alignment: Alignment.bottomCenter,
-                child: Image.asset('assets/images/PulmaoBronquio.png', height: 250),
+                child: Image.asset('assets/images/PartePulmaoBronquio.png', height: 250),
               ),
               Expanded(
                 child: Container(

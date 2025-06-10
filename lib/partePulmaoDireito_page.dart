@@ -41,7 +41,7 @@ class _partePulmaoDireitoPage extends State<partePulmaoDireitoPage> {
             'Pulmão',
             style: GoogleFonts.lobster(
               color: Color(0xFFF4EEDD),
-              fontSize: 45,
+              fontSize: 50,
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -63,7 +63,7 @@ class _partePulmaoDireitoPage extends State<partePulmaoDireitoPage> {
               Container(
                 padding: EdgeInsets.only(top: 12),
                 alignment: Alignment.bottomCenter,
-                child: Image.asset('assets/images/PulmaoDireito.png', height: 250),
+                child: Image.asset('assets/images/PartePulmaoDireito.png', height: 250),
               ),
               Expanded(
                 child: Container(
