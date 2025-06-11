@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-class JogoPergunta1Page extends StatefulWidget {
-  const JogoPergunta1Page({super.key});
-
+class JogoPergunta11Page extends StatefulWidget {
+  const JogoPergunta11Page({super.key});
 
   @override
-  State<JogoPergunta1Page> createState() => _JogoPergunta1Page();
+  State<JogoPergunta11Page> createState() => _JogoPergunta11Page();
 }
 
-
-class _JogoPergunta1Page extends State<JogoPergunta1Page> {
+class _JogoPergunta11Page extends State<JogoPergunta11Page> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,11 +20,10 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: buildListView(5, 30, 0, 10, 20),
+        body: buildListView(25, 55, 10, 20, 30),
       ),
     );
   }
-
 
   buildListView(int pontos, int pontosTotais, int valorEliminar, int valorUniversitarios, int valorPular,) {
     return SafeArea(
@@ -104,7 +100,7 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
-                'Qual é o principal fator de risco para o desenvolvimento do câncer de pulmão?',
+                'Qual profissional da saúde é responsável por tratar o câncer de pulmão?',
                 textAlign: TextAlign.left,
                 style: GoogleFonts.inter(
                   fontSize: 20,
@@ -114,7 +110,6 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
             ),
             SizedBox(height: 8),
 
-
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
@@ -123,14 +118,13 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
               ),
               child: Column(
                 children: [
-                  opcao('A', 'Consumo excessivo de álcool'),
-                  opcao('B', 'Dieta pobre em fibras'),
-                  opcao('C', 'Tabagismo'),
-                  opcao('D', 'Sedentarismo'),
+                  opcao('A', 'Cardiologista'),
+                  opcao('B', 'Gastroenterologista'),
+                  opcao('C', 'Oncologista'),
+                  opcao('D', 'Dermatologista'),
                 ],
               ),
             ),
-
 
             SizedBox(height: 8),
             Padding(
@@ -200,7 +194,6 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
     );
   }
 
-
   opcao(String letra, String texto) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -243,7 +236,6 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
       ),
     );
   }
-
 
   ajuda(String custo, String texto, String iconeFlor, String iconeAjuda) {
     return Column(
