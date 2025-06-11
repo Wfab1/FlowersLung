@@ -20,7 +20,7 @@ class _JogoPergunta16Page extends State<JogoPergunta16Page> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: buildListView(30, 60, 15, 25, 35),
+        body: buildListView(35, 60, 15, 25, 35),
       ),
     );
   }
