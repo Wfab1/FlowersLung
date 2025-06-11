@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-class JogoPergunta1Page extends StatefulWidget {
-  const JogoPergunta1Page({super.key});
-
+class JogoPergunta20Page extends StatefulWidget {
+  const JogoPergunta20Page({super.key});
 
   @override
-  State<JogoPergunta1Page> createState() => _JogoPergunta1Page();
+  State<JogoPergunta20Page> createState() => _JogoPergunta20Page();
 }
 
-
-class _JogoPergunta1Page extends State<JogoPergunta1Page> {
+class _JogoPergunta20Page extends State<JogoPergunta20Page> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,11 +20,10 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: buildListView(10, 30, 0, 10, 20),
+        body: buildListView(35, 65, 20, 30, 40),
       ),
     );
   }
-
 
   buildListView(int pontos, int pontosTotais, int valorEliminar, int valorUniversitarios, int valorPular,) {
     return SafeArea(
@@ -104,7 +100,7 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
-                'Qual é o principal fator de risco para o desenvolvimento do câncer de pulmão?',
+                'O que familiares e amigos podem fazer por alguém com câncer de pulmão?',
                 textAlign: TextAlign.left,
                 style: GoogleFonts.inter(
                   fontSize: 20,
@@ -114,7 +110,6 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
             ),
             SizedBox(height: 8),
 
-
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
@@ -123,14 +118,13 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
               ),
               child: Column(
                 children: [
-                  opcao('A', 'Consumo excessivo de álcool'),
-                  opcao('B', 'Dieta pobre em fibras'),
-                  opcao('C', 'Tabagismo'),
-                  opcao('D', 'Sedentarismo'),
+                  opcao('A', 'Fazer de conta que nada está acontecendo'),
+                  opcao('B', 'Afastar-se para evitar sofrimento'),
+                  opcao('C', 'Oferecer apoio, escutar e ter empatia'),
+                  opcao('D', 'Obrigar a pessoa a se curar rapidamente'),
                 ],
               ),
             ),
-
 
             SizedBox(height: 8),
             Padding(
@@ -200,7 +194,6 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
     );
   }
 
-
   opcao(String letra, String texto) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -243,7 +236,6 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
       ),
     );
   }
-
 
   ajuda(String custo, String texto, String iconeFlor, String iconeAjuda) {
     return Column(
