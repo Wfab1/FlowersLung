@@ -23,7 +23,7 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: buildListView(5, 30, 0, 10, 20),
+        body: buildListView(10, 30, 0, 10, 20),
       ),
     );
   }
