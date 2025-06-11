@@ -120,7 +120,7 @@ class _JogoPergunta12Page extends State<JogoPergunta12Page> {
                 children: [
                   opcao('A', 'Não tem importância'),
                   opcao('B', 'Serve apenas para o médico'),
-                  opcao('C', 'Ajuda o paciente a lidar emocionalmente com a doença'),
+                  opcao('C', 'Ajuda o paciente a lidar emocionalmente com o cancêr'),
                   opcao('D', 'Substitui a medicação'),
                 ],
               ),

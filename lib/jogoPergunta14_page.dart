@@ -120,7 +120,7 @@ class _JogoPergunta14Page extends State<JogoPergunta14Page> {
                 children: [
                   opcao('A', 'Endoscopia'),
                   opcao('B', 'Biópsia pulmonar'),
-                  opcao('C', 'Raio-X da perna'),
+                  opcao('C', 'Raio-X de perna'),
                   opcao('D', 'Eletrocardiograma'),
                 ],
               ),

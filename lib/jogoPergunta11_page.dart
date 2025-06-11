@@ -100,7 +100,7 @@ class _JogoPergunta11Page extends State<JogoPergunta11Page> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
-                'Qual profissional da saúde é responsável pelo tratamento do câncer de pulmão?',
+                'Qual profissional da saúde é responsável por tratar o câncer de pulmão?',
                 textAlign: TextAlign.left,
                 style: GoogleFonts.inter(
                   fontSize: 20,

@@ -118,7 +118,7 @@ class _JogoPergunta15Page extends State<JogoPergunta15Page> {
               ),
               child: Column(
                 children: [
-                  opcao('A', 'Evitar conversar com ela sobre a doença'),
+                  opcao('A', 'Evitar conversar sobre a doença'),
                   opcao('B', 'Oferecer apoio emocional e estar presente'),
                   opcao('C', 'Ignorar os sintomas que ela sente'),
                   opcao('D', 'Dizer para ela não pensar no assunto'),

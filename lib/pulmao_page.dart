@@ -52,7 +52,7 @@ class _PulmaoPageState extends State<PulmaoPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/images/Pulmao.png', width: 330),
+              Image.asset('assets/images/PulmaoNormal.png', width: 330),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

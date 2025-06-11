@@ -121,7 +121,7 @@ class _JogoPergunta9Page extends State<JogoPergunta9Page> {
                   opcao('A', 'Orelhas'),
                   opcao('B', 'Fígado e cérebro'),
                   opcao('C', 'Unhas'),
-                  opcao('D', 'Estômago apenas'),
+                  opcao('D', 'Apenas estômago'),
                 ],
               ),
             ),

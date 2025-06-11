@@ -120,7 +120,7 @@ class _JogoPergunta13Page extends State<JogoPergunta13Page> {
                 children: [
                   opcao('A', 'Nunca'),
                   opcao('B', 'Sempre'),
-                  opcao('C', 'Em alguns casos, sim'),
+                  opcao('C', 'Sim, em alguns casos'),
                   opcao('D', 'Só se for câncer de mama'),
                 ],
               ),

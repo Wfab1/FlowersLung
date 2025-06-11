@@ -75,7 +75,7 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
                   child: ListView(
                     children: [
                       Text(
-                        'O câncer de pulmão pode se manifestar de maneira silenciosa no início, mas alguns sintomas podem indicar que algo não está bem. Identificar essas alterações de forma precoce faz toda a diferença no diagnóstico e no tratamento. Os sinais mais comuns são:',
+                        'O câncer de pulmão pode se manifestar de maneiras silenciosas no início, mas alguns sintomas podem indicar que algo não está bem. Identificar essas alterações de forma precoce faz toda a diferença no diagnóstico e no tratamento. Os sinais mais comuns são:',
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.adamina(
                           color: Colors.black,

@@ -88,7 +88,7 @@ class _InfoApoioPage extends State<InfoApoioPage> {
                             'pode afetar várias áreas da vida: a saúde, as emoções, o convívio'
                             'social e a situação financeira. Por isso, é  importante oferecer'
                             'apoio verdadeiro e constante, por meio de gestos simples. '
-                            'Alguns exemplos são:',
+                            'Alguns exemplos são: ',
                         textAlign: TextAlign.justify,
                         style: GoogleFonts.adamina(
                           color: Colors.black,

@@ -1,7 +1,7 @@
-import 'package:flowerslung/partePulmaoEsquerdo_page.dart';
+import 'package:flowerslung/partePulmaoTraqueia_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: partePulmaoEsquerdoPage(),)
+  runApp(MaterialApp(home: partePulmaoTraqueiaPage(),)
   );
 }

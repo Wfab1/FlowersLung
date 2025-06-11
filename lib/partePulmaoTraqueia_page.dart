@@ -76,8 +76,8 @@ class _partePulmaoTraqueiaPage extends State<partePulmaoTraqueiaPage> {
                   child: ListView(
                     children: [
                       Text(
-                        'A traqueia é um tubo cartilaginoso que conecta a laringe '
-                            'aos brônquios. Ela é formada por anéis de cartilagem '
+                        'A traqueia é um tubo cartilaginoso que faz a conexão da laringe '
+                            'com os brônquios. Ela é formada por anéis de cartilagem '
                             'em forma de “C”, que mantêm o canal sempre aberto para'
                             'a passagem do ar. Sua principal função é levar o ar '
                             'inspirado até os pulmões e também auxiliar na filtragem'

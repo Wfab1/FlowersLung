@@ -76,7 +76,7 @@ class _partePulmaoEsquerdoPage extends State<partePulmaoEsquerdoPage> {
                   child: ListView(
                     children: [
                       Text(
-                        'O pulmão esquerdo está localizado no lado esquerdo do '
+                        'O pulmão esquerdo se localiza no lado esquerdo do '
                             'tórax e é menor que o pulmão direito. Isso porque o '
                             'coração ocupa parte do espaço no lado esquerdo do '
                             'tórax, o que exige uma adaptação anatômica. Ele é '

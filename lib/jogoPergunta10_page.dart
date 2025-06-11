@@ -100,7 +100,7 @@ class _JogoPergunta10Page extends State<JogoPergunta10Page> {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
-                'O câncer de pulmão é mais comum em:',
+                'O câncer de pulmão é mais encontrado em:',
                 textAlign: TextAlign.left,
                 style: GoogleFonts.inter(
                   fontSize: 20,
