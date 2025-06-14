@@ -77,7 +77,7 @@ class _MenuPageState extends State<MenuPage> {
                 ),
                 Text('Jogar', style: GoogleFonts.openSans(
                     color: Colors.black,
-                    fontSize: 24,
+                    fontSize: 24.1,
                     fontWeight: FontWeight.w700),
                 ),
               ],
