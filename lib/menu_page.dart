@@ -24,7 +24,6 @@ class _MenuPageState extends State<MenuPage> {
       toolbarHeight: 100,
       actions: [
         Container(
-          //child: Image.asset('assets/images/FundoBegePulmao.jpg', width: 100, height: 100,),
           child: Image.asset('assets/images/PulmaoComFlores.png', width: 80),
         ),
       ],
