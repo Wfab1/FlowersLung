@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
   @override
@@ -55,7 +54,7 @@ class _MenuPageState extends State<MenuPage> {
             ),
             Text('Informações', style: GoogleFonts.openSans(
                 color: Colors.black,
-                fontSize: 24,
+                fontSize: 24.1,
                 fontWeight: FontWeight.w700),
             ),
           ],
