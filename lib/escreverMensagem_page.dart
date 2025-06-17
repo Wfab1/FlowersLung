@@ -23,7 +23,6 @@ class _EscreverMensagemPage extends State<EscreverMensagemPage> {
 }
 
 buildAppBar() {
-  var centerTitle;
   return AppBar(
     toolbarHeight: 150,
     backgroundColor: Color(0xFFd3b360),
