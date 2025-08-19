@@ -25,6 +25,7 @@ class _MenuInfoPageState extends State<MenuInfoPage> {
   }
   buildAppBar() {
     return AppBar(
+      automaticallyImplyLeading: false,
       toolbarHeight: 100,
       actions: [
         Container(
