@@ -4,6 +4,6 @@ import 'package:flutter/material.dart';
 import 'menu_page.dart';
 
 void main() {
-  runApp(MaterialApp(home: ComunidadePage())
+  runApp(MaterialApp(home: MenuPage())
   );
 }
