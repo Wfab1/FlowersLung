@@ -1,19 +1,26 @@
+import 'package:flowerslung/infoSintomas_page.dart';
+import 'package:flowerslung/infoTratamento_page.dart';
+import 'package:flowerslung/pulmao_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'InfoApoio_page.dart';
 
 class MenuInfoPage extends StatefulWidget {
   const MenuInfoPage({super.key});
   @override
   State<MenuInfoPage> createState() => _MenuInfoPageState();
 }
+
 class _MenuInfoPageState extends State<MenuInfoPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
         decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage('assets/images/FundoPulmaoVermelho.jpg'))
+          image: DecorationImage(
+            image: AssetImage('assets/images/FundoPulmaoVermelho.jpg'),
+          ),
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
@@ -23,13 +30,14 @@ class _MenuInfoPageState extends State<MenuInfoPage> {
       ),
     );
   }
+
   buildAppBar() {
     return AppBar(
       automaticallyImplyLeading: false,
       toolbarHeight: 100,
       actions: [
         Container(
-         // child: Image.asset('assets/images/PulmaoComFlores.png', width: 80),
+          // child: Image.asset('assets/images/PulmaoComFlores.png', width: 80),
         ),
       ],
       centerTitle: true,
@@ -45,101 +53,161 @@ class _MenuInfoPageState extends State<MenuInfoPage> {
     );
   }
 
-
-
-
-  buildListView(){
+  buildListView() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Column(
           children: [
             SizedBox(height: 48),
-            Container(
-              width: 900,
-              height: 70,
-              padding: EdgeInsets.all(8),
-              margin: EdgeInsets.all(8),
-              child:Text('Pulmão', style: GoogleFonts.adamina(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFa54d3b),
+                minimumSize: Size(250, 80),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return PulmaoPage();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                'Pulmão',
+                style: GoogleFonts.adamina(
                   color: Color(0xFFF4EEDD),
                   fontSize: 32,
-                  fontWeight: FontWeight.w700),
-              ),
-              decoration: BoxDecoration(
-                  color: Color(0xFFa54d3b),
-                  borderRadius: BorderRadius.circular(16),
-
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ],
         ),
-        SizedBox(height: 4),
+        SizedBox(height: 14),
         Column(
           children: [
             SizedBox(height: 4),
-            Container(
-              width: 900,
-              height: 70,
-              padding: EdgeInsets.all(8),
-              margin: EdgeInsets.all(8),
-              child:Text('Sintomas', style: GoogleFonts.adamina(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFa54d3b),
+                minimumSize: Size(250, 80),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return InfoSintomasPage();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                'Sintomas',
+                style: GoogleFonts.adamina(
                   color: Color(0xFFF4EEDD),
                   fontSize: 32,
-                  fontWeight: FontWeight.w700),
-              ),
-              decoration: BoxDecoration(
-                  color: Color(0xFFa54d3b),
-                  borderRadius: BorderRadius.circular(16)
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ],
         ),
-        SizedBox(height: 4),
+        SizedBox(height: 14),
         Column(
           children: [
             SizedBox(height: 4),
-            Container(
-              width: 900,
-              height: 70,
-              padding: EdgeInsets.all(8),
-              margin: EdgeInsets.all(8),
-              child:Text('Tratamento', style: GoogleFonts.adamina(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFa54d3b),
+                minimumSize: Size(250, 80),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return InfoTratamentoPage();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                'Tratamento',
+                style: GoogleFonts.adamina(
                   color: Color(0xFFF4EEDD),
                   fontSize: 32,
-                  fontWeight: FontWeight.w700),
-              ),
-              decoration: BoxDecoration(
-                  color: Color(0xFFa54d3b),
-                  borderRadius: BorderRadius.circular(16)
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ],
         ),
-        SizedBox(height: 4),
+        SizedBox(height: 14),
         Column(
           children: [
             SizedBox(height: 4),
-            Container(
-              width: 900,
-              height: 70,
-              padding: EdgeInsets.all(8),
-              margin: EdgeInsets.all(8),
-              child:Text('Apoio', style: GoogleFonts.adamina(
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFa54d3b),
+                minimumSize: Size(250, 80),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return InfoApoioPage();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                'Apoio',
+                style: GoogleFonts.adamina(
                   color: Color(0xFFF4EEDD),
                   fontSize: 32,
-                  fontWeight: FontWeight.w700),
-              ),
-              decoration: BoxDecoration(
-                  color: Color(0xFFa54d3b),
-                  borderRadius: BorderRadius.circular(16)
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
           ],
         ),
-        SizedBox(height: 80),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-
+        SizedBox(height: 115),
+        Row(mainAxisAlignment: MainAxisAlignment.end),
+        Padding(
+          padding: EdgeInsets.only(bottom: 16),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              ElevatedButton(style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFa54d3b),
+                minimumSize: Size(200, 80),
+              ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MenuInfoPage();
+                      },
+                    ),
+                  );
+                },
+                child: Text(
+                  'Tela Inicial',
+                  style: GoogleFonts.openSans(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );

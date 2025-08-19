@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'menuInfo_page.dart';
+
 class InfoTratamentoPage extends StatefulWidget {
   const InfoTratamentoPage({super.key});
   @override
@@ -29,6 +31,7 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
 
   buildAppBar() {
     return AppBar(
+      automaticallyImplyLeading: false,
       toolbarHeight: 100,
       centerTitle: true,
       backgroundColor: Color(0xFFa54d3b),
@@ -116,38 +119,27 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
         Padding(
           padding: EdgeInsets.only(bottom: 16),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-                decoration: BoxDecoration(
-                  color: Color(0xFFa54d3b),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Text(
-                  'Tela Inicial',
-                  style: GoogleFonts.openSans(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
+              ElevatedButton(style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFa54d3b),
+                minimumSize: Size(50, 50),
               ),
-              SizedBox(width: 16),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-                decoration: BoxDecoration(
-                  color: Color(0xFFa54d3b),
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Text(
-                  'Voltar',
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MenuInfoPage();
+                      },
+                    ),
+                  );
+                }, child: Text('Menu Info',
                   style: GoogleFonts.openSans(
                     color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.w700,
-                  ),
-                ),
+                  ),),
               ),
             ],
           ),
