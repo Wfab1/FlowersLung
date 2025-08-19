@@ -1,5 +1,7 @@
+import 'package:flowerslung/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:path/path.dart';
 
 class EscreverMensagemPage extends StatefulWidget {
   const EscreverMensagemPage({super.key});
@@ -24,6 +26,7 @@ class _EscreverMensagemPage extends State<EscreverMensagemPage> {
 
 buildAppBar() {
   return AppBar(
+    automaticallyImplyLeading: false,
     toolbarHeight: 150,
     backgroundColor: Color(0xFFd3b360),
     title: Column(
@@ -93,12 +96,20 @@ buildListView() {
               ),
             ),
             SizedBox(width: 16),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-              decoration: BoxDecoration(
-                color: Color(0xFFd3b360),
-                borderRadius: BorderRadius.circular(30),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFd3b360),
               ),
+              onPressed: () {
+                Navigator.push(
+                  context as BuildContext,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return MenuPage();
+                    },
+                  ),
+                );
+              },
               child: Text(
                 'Voltar',
                 style: GoogleFonts.openSans(

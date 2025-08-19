@@ -63,7 +63,7 @@ class _MenuPageState extends State<MenuPage> {
         SizedBox(height: 24),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 64,
+          spacing: 602,
           children: [
             Column(
               children: [
