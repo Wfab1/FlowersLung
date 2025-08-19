@@ -75,11 +75,6 @@ class _MenuPageState extends State<MenuPage> {
                 fontSize: 24,
                 fontWeight: FontWeight.w700,
               ),
-                fontSize: 24,
-                fontWeight: FontWeight.w700),
-                  ),
-                ),
-              ],
             ),
             Column(
               children: [
