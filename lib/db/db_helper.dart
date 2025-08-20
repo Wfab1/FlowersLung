@@ -28,11 +28,13 @@ class DBHelper {
       nomeComentador TEXT,
       dataComentario TEXT,
       comentario TEXT
-    );
-    CREATE TABLE informacoesSintomas(
-    id INTERGER PRIMARY KEY AUTOINCREMENT,
-    texto TEXT)''';
+    )''';
+    await db.execute(sql);
 
+    sql = '''CREATE TABLE informacoesSintomas(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      texto TEXT
+    )''';
     await db.execute(sql);
 
     sql =
@@ -47,36 +49,36 @@ class DBHelper {
     "INSERT INTO Comunidade (titulo, nomePostador, dataPost, mensagem, nomeComentador, dataComentario, comentario) VALUES ('Recaídas acontecem', 'Maria Silva', '10/01/2025', 'Infelizmente tive uma recaída essa semana. Mas estou determinada a continuar tentando.', 'José Santos', '11/01/2025', 'Não desista, Maria! O importante é continuar tentando.');";
     await db.execute(sql);
 
-    sql=
-    "INSERT INTO informacoesSintomas (texto) VALUES (''O câncer de pulmão pode se manifestar de maneiras silenciosas no início, mas alguns sintomas podem indicar que algo não está bem. Identificar essas alterações de forma precoce faz toda a diferença no diagnóstico e no tratamento. Os sinais mais comuns são:',');";
+    sql =
+    "INSERT INTO informacoesSintomas (texto) VALUES ('O câncer de pulmão pode se manifestar de maneiras silenciosas no início, mas alguns sintomas podem indicar que algo não está bem. Identificar essas alterações de forma precoce faz toda a diferença no diagnóstico e no tratamento. Os sinais mais comuns são:');";
     await db.execute(sql);
 
     sql =
-    "INSERT INTO informacoesSintomas (texto) VALUES (''• Dores locais: costela ou peito;',');";
+    "INSERT INTO informacoesSintomas (texto) VALUES ('• Dores locais: costela ou peito;');";
     await db.execute(sql);
 
     sql =
-    " locaINSERT INTO informacoesSintomas (texto) VALUES (''• Tipos de dor: aguda ou incômoda;',');";
+    "INSERT INTO informacoesSintomas (texto) VALUES ('• Tipos de dor: aguda ou incômoda;');";
     await db.execute(sql);
 
-    sql=
-    " locaINSERT INTO informacoesSintomas (texto) VALUES (''• Dores circunstanciais: ao respirar;',');";
+    sql =
+    "INSERT INTO informacoesSintomas (texto) VALUES ('• Dores circunstanciais: ao respirar;');";
     await db.execute(sql);
 
-    sql=
-    " locaINSERT INTO informacoesSintomas (texto) VALUES (''• Tosse: com catarro, seca, com sangue, forte ou crônica;',');";
+    sql =
+    "INSERT INTO informacoesSintomas (texto) VALUES ('• Tosse: com catarro, seca, com sangue, forte ou crônica;');";
     await db.execute(sql);
 
-    sql=
-    " locaINSERT INTO informacoesSintomas (texto) VALUES (''• No sistema respiratório: falta de ar, infecções respiratórias frequentes ou respiração sibilante;',');";
+    sql =
+    "INSERT INTO informacoesSintomas (texto) VALUES ('• No sistema respiratório: falta de ar, infecções respiratórias frequentes ou respiração sibilante;');";
     await db.execute(sql);
 
-    sql=
-    " locaINSERT INTO informacoesSintomas (texto) VALUES (''• No corpo: fadiga ou perda de apetite;',');";
+    sql =
+    "INSERT INTO informacoesSintomas (texto) VALUES ('• No corpo: fadiga ou perda de apetite;');";
     await db.execute(sql);
 
-    sql=
-    " locaINSERT INTO informacoesSintomas (texto) VALUES (''• Também é comum: fraqueza, inchaço dos gânglios, perda de peso ou pressão no peito.',');";
+    sql =
+    "INSERT INTO informacoesSintomas (texto) VALUES ('• Também é comum: fraqueza, inchaço dos gânglios, perda de peso ou pressão no peito.');";
     await db.execute(sql);
   }
 }

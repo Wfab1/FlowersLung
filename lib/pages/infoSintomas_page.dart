@@ -3,9 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flowerslung/widgets/cardSintomas_page.dart';
 import 'package:flowerslung/domain/sintomas.dart';
 import 'package:flowerslung/db/sintomas_dao.dart';
+import 'menuInfo_page.dart';
+import 'menu_page.dart';
 
 class InfoSintomasPage extends StatefulWidget {
   const InfoSintomasPage({super.key});
+
   @override
   State<InfoSintomasPage> createState() => _InfoSintomasPage();
 }
@@ -24,6 +27,7 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
     setState(() {});
   }
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
@@ -66,69 +70,103 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
     );
   }
 
-  buildListView() {
-    return ListView(
+  Widget buildListView() {
+    return Column(
       children: [
-      ListView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.all(16),
-      itemCount: listaSintomas.length,
-      itemBuilder: (context, i) {
-        return CardSintomas(sintomas: listaSintomas[i]);
-      },
-    ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+        Expanded(
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Image.asset('assets/images/Fumante.png', height: 225),
-              ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 14),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFa54d3b),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        'Tela Inicial',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
+                padding: const EdgeInsets.all(5),
+                child: Image.asset(
+                  'assets/images/Fumante.png',
+                  height: 225,
+                  fit: BoxFit.contain,
+                ),
+              ),
+              Expanded(
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  margin: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFD7AE5E),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: ListView.builder(
+                    itemCount: listaSintomas.length,
+                    itemBuilder: (context, i) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 12),
+                        child: Text(
+                          listaSintomas[i].texto,
+                          textAlign: TextAlign.justify,
+                          style: GoogleFonts.adamina(
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                      ),
-                    ),
-                    const SizedBox(width: 16),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 14),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFa54d3b),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        'Voltar',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                  ],
+                      );
+                    },
+                  ),
                 ),
               ),
             ],
           ),
+        ),
+        SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFa54d3b)),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return MenuPage();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                'Escrever',
+                style: TextStyle(
+                  color: Colors.white,
+                  height: 3,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+            SizedBox(width: 30),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Color(0xFFa54d3b)),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return MenuInfoPage();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                'Voltar',
+                style: TextStyle(
+                  color: Colors.white,
+                  height: 3,
+                  fontSize: 22,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: 30),
       ],
     );
   }

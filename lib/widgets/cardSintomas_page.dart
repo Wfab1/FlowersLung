@@ -1,63 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flowerslung/widgets/cardSintomas_page.dart';
+import 'package:flowerslung/domain/sintomas.dart';
+import 'package:flowerslung/db/sintomas_dao.dart';
+import 'package:flowerslung/pages/menuInfo_page.dart';
+import 'package:flowerslung/pages/menu_page.dart';
 
-import '../domain/sintomas.dart';
+class CardSintomas extends StatelessWidget {
+  String texto;
 
-class CardSintomas extends StatefulWidget {
-  Sintomas sintomas;
-
-  CardSintomas({required this.sintomas, super.key});
-
-  @override
-  State<CardSintomas> createState() => _CardSintomasState();
-}
-
-class _CardSintomasState extends State<CardSintomas> {
-  Sintomas get sintomas => widget.sintomas;
+  CardSintomas({required this.texto, super.key});
 
   @override
   Widget build(BuildContext context) {
-    return buildBloco(sintomas.texto);
+    return buildBloco(texto, Color(0xFFD7AE5E));
   }
 
-  buildBloco(String texto) {
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Image.asset('assets/images/Fumante.png', height: 225),
-              ),
-              Expanded(
-                child: Container(
-                  padding: EdgeInsets.all(8),
-                  margin: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Color(0xFFD7AE5E),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: ListView(
-                    children: [
-                      Text(
-                        texto,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
+  buildBloco(String texto, Color corFundo) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: 12),
+      child: Container(
+        decoration: BoxDecoration(
+          color: corFundo,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        padding: EdgeInsets.all(16),
+        child: Text(
+          texto,
+          textAlign: TextAlign.justify,
+          style: GoogleFonts.adamina(
+            color: Colors.black,
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
           ),
         ),
-      ],
+      ),
     );
   }
 }
