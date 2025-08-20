@@ -132,7 +132,7 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
                 );
               },
               child: Text(
-                'Escrever',
+                'Menu Inicial',
                 style: TextStyle(
                   color: Colors.white,
                   height: 3,

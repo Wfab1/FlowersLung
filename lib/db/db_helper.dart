@@ -78,7 +78,7 @@ class DBHelper {
     await db.execute(sql);
 
     sql =
-    "INSERT INTO informacoesSintomas (texto) VALUES ('• Também é comum: fraqueza, inchaço dos gânglios, perda de peso ou pressão no peito.');";
+    "INSERT INTO informacoesSintomas (texto) VALUES ('• Também é comum: fraqueza, inchaço dos gânglios, perda de peso e pressão no peito.');";
     await db.execute(sql);
   }
 }

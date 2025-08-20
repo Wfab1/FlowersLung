@@ -24,7 +24,7 @@ class CardSintomas extends StatelessWidget {
           color: corFundo,
           borderRadius: BorderRadius.circular(16),
         ),
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.all(15),
         child: Text(
           texto,
           textAlign: TextAlign.justify,
