@@ -3,7 +3,7 @@ import 'package:flowerslung/pages/comunidade_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'menuInfo_page.dart';
+import '../menuInfo_page.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -33,6 +33,7 @@ class _MenuPageState extends State<MenuPage> {
 
   buildAppBar() {
     return AppBar(
+      automaticallyImplyLeading: false,
       toolbarHeight: 100,
       actions: [
         Container(

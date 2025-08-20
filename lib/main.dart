@@ -1,9 +1,8 @@
-import 'package:flowerslung/pages/comunidade_page.dart';
 import 'package:flutter/material.dart';
 
-import 'menu_page.dart';
+import 'package:flowerslung/pages/homePage.dart';
 
 void main() {
-  runApp(MaterialApp(home: MenuPage())
+  runApp(MaterialApp(home: HomePage())
   );
 }
