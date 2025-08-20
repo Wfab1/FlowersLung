@@ -63,13 +63,23 @@ buildListView(int pontos) {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-              decoration: BoxDecoration(
-                color: Color(0xFFf4eedd),
-                borderRadius: BorderRadius.circular(30),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFf4eedd),
+                minimumSize: Size(60, 60),
               ),
-              child: Text('Tela Inicial',
+              onPressed: () {
+                // Navigator.push(
+                //  context,
+                //MaterialPageRoute(
+                // builder: (context) {
+                //  return ();
+                // },
+                //),
+                // );
+              },
+              child: Text(
+                'Parar',
                 style: GoogleFonts.openSans(
                   color: Colors.black,
                   fontSize: 24,
@@ -77,14 +87,24 @@ buildListView(int pontos) {
                 ),
               ),
             ),
-            SizedBox(width: 16),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-              decoration: BoxDecoration(
-                color: Color(0xFFf4eedd),
-                borderRadius: BorderRadius.circular(30),
+            SizedBox(width: 48),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFf4eedd),
+                minimumSize: Size(60, 60),
               ),
-              child: Text('Sair',
+              onPressed: () {
+                // Navigator.push(
+                //  context,
+                //MaterialPageRoute(
+                // builder: (context) {
+                //  return ();
+                // },
+                //),
+                // );
+              },
+              child: Text(
+                'Continuar',
                 style: GoogleFonts.openSans(
                   color: Colors.black,
                   fontSize: 24,

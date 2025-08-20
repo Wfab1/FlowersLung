@@ -66,15 +66,19 @@ class _JogoPergunta5Page extends State<JogoPergunta5Page> {
                             ],
                           ),
                         ),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 8,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xFFa54d3b),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xFFa54d3b)),
+                          onPressed: () {
+                            //  Navigator.push(
+                            // context,
+                            // MaterialPageRoute(
+                            //  builder: (context) {
+                            //   return MenuPage();
+                            // },
+                            // )
+                            // );
+                          },
                           child: Text(
                             'Parar',
                             style: GoogleFonts.openSans(
@@ -222,12 +226,24 @@ class _JogoPergunta5Page extends State<JogoPergunta5Page> {
             ),
             SizedBox(width: 16),
             Expanded(
-              child: Text(
-                texto,
-                style: GoogleFonts.inter(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
+              child:  TextButton(
+                onPressed: () {
+                  //Navigator.push(
+                  //context,
+                  // MaterialPageRoute(
+                  //   builder: (context) {
+                  //   return EscreverMensagemPage();
+                  // },
+                  //),
+                  //);
+                },
+                child: Text(
+                  texto,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ),
@@ -255,7 +271,7 @@ class _JogoPergunta5Page extends State<JogoPergunta5Page> {
           ],
         ),
         SizedBox(height: 4),
-        Image.asset(iconeAjuda, height: 32),
+        ElevatedButton(onPressed: (){}, child: Image.asset(iconeAjuda, height: 32),),
         SizedBox(height: 4),
         Text(texto, style: GoogleFonts.inter(fontSize: 14)),
       ],
