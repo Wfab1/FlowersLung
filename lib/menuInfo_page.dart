@@ -139,7 +139,6 @@ class _MenuInfoPageState extends State<MenuInfoPage> {
         SizedBox(height: 80),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
-
         ),
       ],
     );
