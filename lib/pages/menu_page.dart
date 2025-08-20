@@ -122,8 +122,7 @@ class _MenuPageState extends State<MenuPage> {
                     ),
                   );
                 }, child:
-                  Image.asset(
-                  'assets/images/IconComunidade.png', width: 80,height: 70,),
+                  Image.asset('assets/images/IconComunidade.png', width: 80,height: 70,),
                 ),
                 Text(
                   'Comunidade',
@@ -141,3 +140,4 @@ class _MenuPageState extends State<MenuPage> {
     );
   }
 }
+

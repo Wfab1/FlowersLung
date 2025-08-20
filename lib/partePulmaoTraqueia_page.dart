@@ -26,6 +26,7 @@ class _partePulmaoTraqueiaPage extends State<partePulmaoTraqueiaPage> {
 
   buildAppBar() {
     return AppBar(
+      automaticallyImplyLeading: false,
       toolbarHeight: 100,
       centerTitle: true,
       backgroundColor: Color(0xFFa54d3b),
