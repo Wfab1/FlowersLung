@@ -1,7 +1,8 @@
-import 'package:flowerslung/pulmao_page.dart';
 import 'package:flutter/material.dart';
 
+import 'package:flowerslung/pages/homePage.dart';
+
 void main() {
-  runApp(MaterialApp(home: PulmaoPage(),)
+  runApp(MaterialApp(home: HomePage())
   );
 }
