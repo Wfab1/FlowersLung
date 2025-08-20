@@ -1,8 +1,10 @@
+import 'package:flowerslung/menuInfo_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flowerslung/widgets/cardSintomas_page.dart';
 import 'package:flowerslung/domain/sintomas.dart';
 import 'package:flowerslung/db/sintomas_dao.dart';
+import 'package:flowerslung/pages/menu_page.dart';
 
 class InfoSintomasPage extends StatefulWidget {
   const InfoSintomasPage({super.key});
@@ -69,66 +71,82 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
   buildListView() {
     return ListView(
       children: [
-      ListView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.all(16),
-      itemCount: listaSintomas.length,
-      itemBuilder: (context, i) {
-        return CardSintomas(sintomas: listaSintomas[i]);
-      },
-    ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Image.asset('assets/images/Fumante.png', height: 225),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 14),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFa54d3b),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        'Tela Inicial',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
+        ListView.builder(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.all(16),
+          itemCount: listaSintomas.length,
+          itemBuilder: (context, i) {
+            return CardSintomas(sintomas: listaSintomas[i]);
+          },
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Image.asset('assets/images/Fumante.png', height: 225),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFa54d3b),
+                      minimumSize: Size(60, 60),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return MenuPage();
+                          },
                         ),
+                      );
+                    },
+                    child: Text(
+                      'Menu Inicial',
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
-                    const SizedBox(width: 16),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 14),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFa54d3b),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        'Voltar',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.w700,
+                  ),
+                  const SizedBox(width: 16),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFa54d3b),
+                      minimumSize: Size(60, 60),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return MenuInfoPage();
+                          },
                         ),
+                      );
+                    },
+                    child: Text(
+                      'Voltar',
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 24,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
+        ),
       ],
     );
   }
