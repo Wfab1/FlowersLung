@@ -1,7 +1,7 @@
-import 'package:flowerslung/pages/infoSintomas_page.dart';
+import 'package:flowerslung/pulmao_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: InfoSintomasPage(),)
+  runApp(MaterialApp(home: PulmaoPage(),)
   );
 }
