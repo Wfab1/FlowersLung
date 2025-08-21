@@ -37,6 +37,12 @@ class DBHelper {
     )''';
     await db.execute(sql);
 
+    sql = '''CREATE TABLE informacoesApoio(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      texto TEXT
+    )''';
+    await db.execute(sql);
+
     sql =
     "INSERT INTO Comunidade (titulo, nomePostador, dataPost, mensagem, nomeComentador, dataComentario, comentario) VALUES ('Luta contra o cigarro', 'Anny Beatriz', '01/01/2025', 'Desenvolvi câncer de pulmão por fumar desde os 11 anos e estou tentando me livrar desse vício.', 'Wanessa Fernanda', '02/01/2025', 'Oi, Anny! Estou passando pela mesma situação que você. Estão sendo dias difíceis.');";
     await db.execute(sql);
@@ -79,6 +85,28 @@ class DBHelper {
 
     sql =
     "INSERT INTO informacoesSintomas (texto) VALUES ('• Também é comum: fraqueza, inchaço dos gânglios, perda de peso e pressão no peito.');";
+    await db.execute(sql);
+
+
+    sql =
+    "INSERT INTO informacoesApoio (texto) VALUES ('Receber o diagnóstico de câncer de pulmão é um momento difícil, que pode afetar várias áreas da vida: a saúde, as emoções, o convívio social e a situação financeira.');";
+    await db.execute(sql);
+
+    sql =
+    "INSERT INTO informacoesApoio (texto) VALUES ('Por isso, é  importante oferecer apoio verdadeiro e constante, por meio de gestos simples. Alguns exemplos são:');";
+    await db.execute(sql);
+
+
+    sql =
+    "INSERT INTO informacoesApoio (texto) VALUES ('• Apoio emocional faz diferença. Muitas vezes, a pessoa precisa apenas de alguém que a ouça, esteja ao seu lado e a incentive a não perder a esperança;');";
+    await db.execute(sql);
+
+    sql =
+    "INSERT INTO informacoesApoio (texto) VALUES ('• Grupos de apoio e conversas com profissionais também ajudam a lidar com os medos e incertezas;');";
+    await db.execute(sql);
+
+    sql =
+    "INSERT INTO informacoesApoio (texto) VALUES ('• Apoie no dia a dia. Além do tratamento, existem desafios práticos. É possível ajudar buscando informações sobre programas gratuitos que oferecem medicamentos, transporte, fraldas, suplementos ou até atendimento psicológico, como faz o Grupo de Apoio a Pessoas com Câncer (GAPC).');";
     await db.execute(sql);
   }
 }
