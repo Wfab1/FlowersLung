@@ -108,5 +108,25 @@ class DBHelper {
     sql =
     "INSERT INTO informacoesApoio (texto) VALUES ('• Apoie no dia a dia. Além do tratamento, existem desafios práticos. É possível ajudar buscando informações sobre programas gratuitos que oferecem medicamentos, transporte, fraldas, suplementos ou até atendimento psicológico, como faz o Grupo de Apoio a Pessoas com Câncer (GAPC).');";
     await db.execute(sql);
+
+
+    sql = '''CREATE TABLE Perguntas (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      pergunta TEXT,
+      alternativa1 TEXT,
+      alternativa2 TEXT,
+      alternativa3 TEXT,
+      alternativa4 TEXT,
+      alternativaCorreta TEXT
+    )''';
+    await db.execute(sql);
+
+    sql = "INSERT INTO PERGUNTAS (pergunta, alternativa1, alternativa2, alternativa3, alternativa4, alternativaCorreta) VALUES ('Qual é o principal fator de risco para o desenvolvimento do câncer de pulmão?', 'Consumo excessivo de álcool', 'Dieta pobre em fibras','Tabagismo','Sedentarismo', 'A')";
+    await db.execute(sql);
+
+    sql = "INSERT INTO PERGUNTAS (pergunta, alternativa1, alternativa2, alternativa3, alternativa4, alternativaCorreta) VALUES ('Pergunta2', 'Consumo excessivo de álcool', 'Dieta pobre em fibras','Tabagismo','Sedentarismo', 'B')";
+    await db.execute(sql);
+
+
   }
 }

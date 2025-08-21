@@ -1,17 +1,31 @@
+import 'package:flowerslung/db/pergunta_dao.dart';
+import 'package:flowerslung/domain/pergunta.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class JogoPergunta1Page extends StatefulWidget {
   const JogoPergunta1Page({super.key});
-
 
   @override
   State<JogoPergunta1Page> createState() => _JogoPergunta1Page();
 }
 
-
 class _JogoPergunta1Page extends State<JogoPergunta1Page> {
+  List<Pergunta> listaPerguntas = [];
+  int indexSelecionado = 0;
+
+  @override
+  void initState() {
+    super.initState();
+
+    loadData();
+  }
+
+  loadData() async {
+    listaPerguntas = await PerguntaDao().listarPerguntas(); // 3 seg
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,12 +38,18 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: buildListView(15, 30, 0, 10, 20),
+
       ),
     );
   }
 
-
-  buildListView(int pontos, int pontosTotais, int valorEliminar, int valorUniversitarios, int valorPular,) {
+  buildListView(
+    int pontos,
+    int pontosTotais,
+    int valorEliminar,
+    int valorUniversitarios,
+    int valorPular,
+  ) {
     return SafeArea(
       child: SingleChildScrollView(
         padding: EdgeInsets.only(bottom: 24),
@@ -94,44 +114,7 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
                 ),
               ],
             ),
-            SizedBox(height: 8),
-            Container(
-              width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: 12),
-              padding: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Color(0xFFf4eedd),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Text(
-                'Qual é o principal fator de risco para o desenvolvimento do câncer de pulmão?',
-                textAlign: TextAlign.left,
-                style: GoogleFonts.inter(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
-            SizedBox(height: 8),
-
-
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 16),
-              decoration: BoxDecoration(
-                color: Color(0xFFf4eedd),
-                borderRadius: BorderRadius.circular(24),
-              ),
-              child: Column(
-                children: [
-                  opcao('A', 'Consumo excessivo de álcool'),
-                  opcao('B', 'Dieta pobre em fibras'),
-                  opcao('C', 'Tabagismo'),
-                  opcao('D', 'Sedentarismo'),
-                ],
-              ),
-            ),
-
-
+            buildPergunta(),
             SizedBox(height: 8),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12),
@@ -200,50 +183,107 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
     );
   }
 
+  buildPergunta() {
+    if (listaPerguntas.isEmpty) {
+      return CircularProgressIndicator();
+    }
+
+    return Column(
+      children: [
+        SizedBox(height: 8),
+        Container(
+          width: double.infinity,
+          margin: EdgeInsets.symmetric(horizontal: 12),
+          padding: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Color(0xFFf4eedd),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Text(
+            listaPerguntas[indexSelecionado].pergunta,
+            textAlign: TextAlign.left,
+            style: GoogleFonts.inter(fontSize: 20, fontWeight: FontWeight.w700),
+          ),
+        ),
+        SizedBox(height: 8),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 16),
+          decoration: BoxDecoration(
+            color: Color(0xFFf4eedd),
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: Column(
+            children: [
+              opcao('A', listaPerguntas[indexSelecionado].alternativa1),
+              opcao('B', listaPerguntas[indexSelecionado].alternativa2),
+              opcao('C', listaPerguntas[indexSelecionado].alternativa3),
+              opcao('D', listaPerguntas[indexSelecionado].alternativa4),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
 
   opcao(String letra, String texto) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-        decoration: BoxDecoration(
-          color: Color(0xFFB95D35),
-          borderRadius: BorderRadius.circular(32),
-        ),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Color(0xFF7A2E1E),
-              ),
-              child: Text(
-                letra,
-                style: GoogleFonts.inter(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+    return InkWell(
+      onTap: (){
+        if(letra == listaPerguntas[indexSelecionado].respostaCorreta){
+
+          print('Resposta certa');
+
+          if(indexSelecionado < listaPerguntas.length - 1){
+            setState(() {
+              indexSelecionado++;
+            });
+          }
+
+        } else {
+          print('Resposta errada');
+        }
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          decoration: BoxDecoration(
+            color: Color(0xFFB95D35),
+            borderRadius: BorderRadius.circular(32),
+          ),
+          child: Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFF7A2E1E),
+                ),
+                child: Text(
+                  letra,
+                  style: GoogleFonts.inter(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(width: 16),
-            Expanded(
-              child: Text(
-                texto,
-                style: GoogleFonts.inter(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
+              SizedBox(width: 16),
+              Expanded(
+                child: Text(
+                  texto,
+                  style: GoogleFonts.inter(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
-
 
   ajuda(String custo, String texto, String iconeFlor, String iconeAjuda) {
     return Column(
