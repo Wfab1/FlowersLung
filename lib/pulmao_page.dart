@@ -1,11 +1,23 @@
+import 'package:flowerslung/menuInfo_page.dart';
+import 'package:flowerslung/partePulmaoBronquio_page.dart';
+import 'package:flowerslung/partePulmaoBronquiolos_page.dart';
+import 'package:flowerslung/partePulmaoDireito_page.dart';
+import 'package:flowerslung/partePulmaoEsquerdo_page.dart';
+import 'package:flowerslung/partePulmaoFluidoPleural_page.dart';
+import 'package:flowerslung/partePulmaoLobos_page.dart';
+import 'package:flowerslung/partePulmaoPleura_page.dart';
+import 'package:flowerslung/partePulmaoTraqueia_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'package:flowerslung/pages/menu_page.dart';
 
 class PulmaoPage extends StatefulWidget {
   const PulmaoPage({super.key});
   @override
   State<PulmaoPage> createState() => _PulmaoPageState();
 }
+
 class _PulmaoPageState extends State<PulmaoPage> {
   @override
   build(BuildContext context) {
@@ -58,75 +70,98 @@ class _PulmaoPageState extends State<PulmaoPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFd3b360),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        '1',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFd3b360),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return partePulmaoBronquioPage();
+                          },
                         ),
+                      );
+                    },
+                    child: Text(
+                      '1',
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFd3b360),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        '2',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
+                  SizedBox(width: 8),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFd3b360),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return partePulmaoDireitoPage();
+                          },
                         ),
+                      );
+                    },
+                    child: Text(
+                      '2',
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFd3b360),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        '3',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
+                  SizedBox(width: 8),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFd3b360),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return partePulmaoEsquerdoPage();
+                          },
                         ),
+                      );
+                    },
+                    child: Text(
+                      '3',
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFd3b360),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        '4',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
+                  SizedBox(width: 8),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFd3b360),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return partePulmaoTraqueiaPage();
+                          },
                         ),
+                      );
+                    },
+                    child: Text(
+                      '4',
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
@@ -138,75 +173,99 @@ class _PulmaoPageState extends State<PulmaoPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFd3b360),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        '5',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
+                  SizedBox(width: 8),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFd3b360),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return partePulmaoLobosPage();
+                          },
                         ),
+                      );
+                    },
+                    child: Text(
+                      '5',
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFd3b360),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        '6',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
+                  SizedBox(width: 8),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFd3b360),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return partePulmaoBronquiolosPage();
+                          },
                         ),
+                      );
+                    },
+                    child: Text(
+                      '6',
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFd3b360),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        '7',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
+                  SizedBox(width: 8),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFd3b360),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return partePulmaoPleuraPage();
+                          },
                         ),
+                      );
+                    },
+                    child: Text(
+                      '7',
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                    child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFd3b360),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Text(
-                        '8',
-                        style: GoogleFonts.openSans(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w700,
+                  SizedBox(width: 8),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Color(0xFFd3b360),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return partePulmaoFluidoPleuralPage();
+                          },
                         ),
+                      );
+                    },
+                    child: Text(
+                      '8',
+                      style: GoogleFonts.openSans(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                   ),
@@ -222,14 +281,23 @@ class _PulmaoPageState extends State<PulmaoPage> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-                decoration: BoxDecoration(
-                  color: Color(0xFFa54d3b),
-                  borderRadius: BorderRadius.circular(30),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFa54d3b),
+                  minimumSize: Size(60, 60)
                 ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MenuPage();
+                      },
+                    ),
+                  );
+                },
                 child: Text(
-                  'Tela Inicial',
+                  'Menu Inicial',
                   style: GoogleFonts.openSans(
                     color: Colors.white,
                     fontSize: 22,
@@ -238,12 +306,21 @@ class _PulmaoPageState extends State<PulmaoPage> {
                 ),
               ),
               SizedBox(width: 30),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-                decoration: BoxDecoration(
-                  color: Color(0xFFa54d3b),
-                  borderRadius: BorderRadius.circular(30),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFa54d3b),
+                  minimumSize: Size(60, 60)
                 ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return MenuInfoPage();
+                      },
+                    ),
+                  );
+                },
                 child: Text(
                   'Voltar',
                   style: GoogleFonts.openSans(

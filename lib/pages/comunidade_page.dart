@@ -4,7 +4,7 @@ import 'package:flowerslung/escreverMensagem_page.dart';
 import 'package:flowerslung/widgets/cardComunidade_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../menu_page.dart';
+import 'package:flowerslung/pages/menu_page.dart';
 
 class ComunidadePage extends StatefulWidget {
   const ComunidadePage({super.key});
