@@ -65,7 +65,7 @@ class _CardComunidadeState extends State<CardComunidade> {
                           Text(
                             titulo,
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w700,
                               fontSize: 16,
                             ),
                           ),
@@ -101,7 +101,7 @@ class _CardComunidadeState extends State<CardComunidade> {
                         children: [
                           Text(
                             'Comentário',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.w700),
                           ),
                           Text(nomeComentador, style: TextStyle(fontSize: 14)),
                         ],
