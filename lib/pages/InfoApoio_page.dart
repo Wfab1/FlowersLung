@@ -45,6 +45,7 @@ class _InfoApoioPage extends State<InfoApoioPage> {
 
   buildAppBar() {
     return AppBar(
+      automaticallyImplyLeading: false,
       toolbarHeight: 100,
       centerTitle: true,
       backgroundColor: Color(0xFFa54d3b),
@@ -55,7 +56,7 @@ class _InfoApoioPage extends State<InfoApoioPage> {
             width: 80,
             height: 80,
           ),
-          SizedBox(width: 30),
+          SizedBox(width: 40),
           Text(
             'Apoio',
             style: GoogleFonts.lobster(
