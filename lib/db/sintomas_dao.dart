@@ -17,7 +17,6 @@ class SintomasDao {
       Sintomas sintomas = Sintomas.fromJson(json);
       listaSintomas.add(sintomas);
     }
-
     return listaSintomas;
   }
 }
