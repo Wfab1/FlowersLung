@@ -166,6 +166,7 @@ class _InfoApoioPage extends State<InfoApoioPage> {
             ),
           ],
         ),
+
         SizedBox(height: 30),
       ],
     );

@@ -142,7 +142,7 @@ class _MenuInfoPageState extends State<MenuInfoPage> {
                   height: 60,
                   alignment: Alignment.center,
                   child: Text(
-                    'Tratamento',
+                    'Tratamentos',
                     style: GoogleFonts.adamina(
                       color: Color(0xFFF4EEDD),
                       fontSize: 32,

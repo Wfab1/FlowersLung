@@ -96,7 +96,7 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
                         'No tipo de não pequenas células, os estágios I e II são tratados com '
                         'cirurgia, quimioterapia e, às vezes, terapia-alvo ou imunoterapia. '
                         'O estágio III exige uma abordagem combinada, podendo envolver '
-                        'cirurgia, quimio, rádio e imunoterapia. No estágio IV, o objetivo é '
+                        'cirurgia, quimioterapia, rádio e imunoterapia. No estágio IV, o objetivo é '
                         'controlar a doença com quimioterapia, imunoterapia ou terapia-alvo, '
                         'conforme as mutações do tumor.',
                         textAlign: TextAlign.justify,
