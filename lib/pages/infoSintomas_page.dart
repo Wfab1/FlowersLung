@@ -115,7 +115,6 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
             ],
           ),
         ),
-
         SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -153,7 +153,6 @@ class _MenuInfoPageState extends State<MenuInfoPage> {
               ),
 
               SizedBox(height: 10),
-
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFFa54d3b),
