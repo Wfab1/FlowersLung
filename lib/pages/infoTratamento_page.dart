@@ -87,8 +87,8 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
               ),
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.all(16),
-                  margin: const EdgeInsets.all(10),
+                  padding: EdgeInsets.all(16),
+                  margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: Color(0xFFD7AE5E),
                     borderRadius: BorderRadius.circular(16),
