@@ -1,9 +1,9 @@
-class Sintomas{
+class Tratamento{
   late String texto;
-  Sintomas({
+  Tratamento({
     required this.texto,
   });
-  Sintomas.fromJson(Map<String, dynamic> json) {
+  Tratamento.fromJson(Map<String, dynamic> json) {
     texto = json['texto'];
   }
   Map<String, dynamic> toJson() {

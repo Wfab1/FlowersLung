@@ -43,6 +43,12 @@ class DBHelper {
     )''';
     await db.execute(sql);
 
+    sql = '''CREATE TABLE informacoesTratamento(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      texto TEXT
+    )''';
+    await db.execute(sql);
+
     sql =
     "INSERT INTO Comunidade (titulo, nomePostador, dataPost, mensagem, nomeComentador, dataComentario, comentario) VALUES ('Luta contra o cigarro', 'Anny Beatriz', '01/08/2025', 'Desenvolvi câncer de pulmão por fumar desde os 11 anos e estou tentando me livrar desse vício.', 'Wanessa Fernanda', '02/01/2025', 'Oi, Anny! Estou passando pela mesma situação que você. Estão sendo dias difíceis.');";
     await db.execute(sql);
@@ -108,6 +114,13 @@ class DBHelper {
     "INSERT INTO informacoesApoio (texto) VALUES ('• Apoie no dia a dia. Além do tratamento, existem desafios práticos. É possível ajudar buscando informações sobre programas gratuitos que oferecem medicamentos, transporte, fraldas, suplementos ou até atendimento psicológico, como faz o Grupo de Apoio a Pessoas com Câncer (GAPC).');";
     await db.execute(sql);
 
+    sql =
+    "INSERT INTO informacoesTratamento (texto) VALUES ('O tratamento do câncer de pulmão varia conforme o tipo e o estágio da doença. No tipo de pequenas células, a doença limitada é tratada com quimioterapia, radioterapia torácica e radioterapia no crânio para prevenir metástases. Já a doença extensa foca no controle e qualidade de vida, com quimioterapia e imunoterapia, evitando a radioterapia profilática no crânio.');";
+    await db.execute(sql);
+
+    sql =
+    "INSERT INTO informacoesTratamento (texto) VALUES ('No tipo de não pequenas células, os estágios I e II são tratados com cirurgia, quimioterapia e, às vezes, terapia-alvo ou imunoterapia. O estágio III exige uma abordagem combinada, podendo envolver cirurgia, quimio, rádio e imunoterapia. No estágio IV, o objetivo é controlar a doença com quimioterapia, imunoterapia ou terapia-alvo, conforme as mutações do tumor.');";
+    await db.execute(sql);
 
     sql = '''CREATE TABLE Perguntas (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
