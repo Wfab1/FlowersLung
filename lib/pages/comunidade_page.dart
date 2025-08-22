@@ -77,7 +77,7 @@ class _ComunidadePageState extends State<ComunidadePage> {
               }, child: Text('Escrever',
             style: TextStyle(
             color: Colors.white,
-                fontSize: 22,
+                fontSize: 23,
                 fontWeight: FontWeight.w700,)
                 )
             ),
@@ -96,7 +96,7 @@ class _ComunidadePageState extends State<ComunidadePage> {
             }, child: Text('Voltar',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 22,
+                  fontSize: 23,
                   fontWeight: FontWeight.w700,)
             )
             )

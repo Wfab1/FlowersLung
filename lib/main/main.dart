@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:flowerslung/pages/infoSintomas_page.dart';
+import 'package:flowerslung/pages/comunidade_page.dart';
 
 void main() {
-  runApp(MaterialApp(home: InfoSintomasPage())
+  runApp(MaterialApp(home: ComunidadePage())
   );
 }
