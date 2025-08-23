@@ -1,7 +1,7 @@
-import 'package:flowerslung/pages/menuInfo_page.dart';
+import 'package:flowerslung/pages/InfoTratamento_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: MenuInfoPage(),)
+  runApp(MaterialApp(home: InfoTratamentoPage(),)
   );
 }

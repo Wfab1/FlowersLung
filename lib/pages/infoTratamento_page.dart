@@ -70,7 +70,7 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
     );
   }
 
-  Widget buildListView() {
+  buildListView() {
     return Column(
       children: [
         Expanded(
@@ -78,7 +78,7 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
-                padding: const EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
                 child: Image.asset(
                   'assets/images/Medica.png',
                   height: 225,
@@ -90,23 +90,14 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
                   padding: EdgeInsets.all(16),
                   margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Color(0xFFD7AE5E),
+                    color: Colors.transparent,
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: ListView.builder(
                     itemCount: listaTratamento.length,
                     itemBuilder: (context, i) {
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 12),
-                        child: Text(
-                          listaTratamento[i].texto,
-                          textAlign: TextAlign.justify,
-                          style: GoogleFonts.adamina(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
+                      return CardTratamento(
+                        tratamento: listaTratamento[i],
                       );
                     },
                   ),

@@ -12,11 +12,11 @@ class ApoioDao {
 
     await Future.delayed(Duration(seconds: 3));
 
-    // ForEach
     for (var json in result) {
       Apoio apoio = Apoio.fromJson(json);
       listaApoio.add(apoio);
     }
+
     return listaApoio;
   }
 }
