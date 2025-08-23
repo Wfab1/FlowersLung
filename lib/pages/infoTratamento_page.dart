@@ -85,6 +85,7 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
                   fit: BoxFit.contain,
                 ),
               ),
+
               Expanded(
                 child: Container(
                   padding: EdgeInsets.all(16),

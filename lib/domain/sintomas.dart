@@ -8,7 +8,6 @@ class Sintomas {
     required this.subtitulo,
     required this.texto,
   });
-
   Sintomas.fromJson(Map<String, dynamic> json) {
     titulo = json['titulo'];
     subtitulo = json['subtitulo'];

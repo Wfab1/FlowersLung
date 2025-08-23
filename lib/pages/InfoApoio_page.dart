@@ -106,6 +106,7 @@ class _InfoApoioPage extends State<InfoApoioPage> {
             ],
           ),
         ),
+
         SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,

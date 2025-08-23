@@ -85,6 +85,7 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
                   fit: BoxFit.contain,
                 ),
               ),
+
               Expanded(
                 child: Container(
                   padding: EdgeInsets.all(16),

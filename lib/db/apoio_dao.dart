@@ -16,7 +16,6 @@ class ApoioDao {
       Apoio apoio = Apoio.fromJson(json);
       listaApoio.add(apoio);
     }
-
     return listaApoio;
   }
 }

@@ -6,7 +6,6 @@ class CardTratamento extends StatelessWidget {
   final Tratamento tratamento;
 
   CardTratamento ({required this.tratamento , super.key});
-
   @override
   Widget build(BuildContext context) {
     return Padding(

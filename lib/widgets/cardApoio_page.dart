@@ -44,7 +44,6 @@ class CardApoio extends StatelessWidget {
                 ],
               ),
             ),
-
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.0),
               child: Text(

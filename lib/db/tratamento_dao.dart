@@ -9,7 +9,6 @@ class TratamentoDao {
     var result = await db.rawQuery(sql);
 
     List<Tratamento> listaTratamento = [];
-
     await Future.delayed(Duration(seconds: 3));
 
     for (var json in result) {

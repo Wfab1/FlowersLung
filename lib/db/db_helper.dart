@@ -16,7 +16,6 @@ class DBHelper {
       onCreate: onCreate,
     );
 
-
     print(dbPath);
     return database;
   }
