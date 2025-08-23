@@ -1,4 +1,4 @@
-import 'package:flowerslung/menuInfo_page.dart';
+import 'package:flowerslung/pages/menuInfo_page.dart';
 import 'package:flowerslung/partePulmaoBronquio_page.dart';
 import 'package:flowerslung/partePulmaoBronquiolos_page.dart';
 import 'package:flowerslung/partePulmaoDireito_page.dart';

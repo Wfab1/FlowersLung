@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flowerslung/widgets/cardSintomas_page.dart';
-import 'package:flowerslung/domain/sintomas.dart';
-import 'package:flowerslung/db/sintomas_dao.dart';
+import 'package:flowerslung/widgets/cardApoio_page.dart';
+import 'package:flowerslung/domain/apoio.dart';
+import 'package:flowerslung/db/apoio_dao.dart';
 import 'menuInfo_page.dart';
 import 'menu_page.dart';
 
-class InfoSintomasPage extends StatefulWidget {
-  const InfoSintomasPage({super.key});
+class InfoApoioPage extends StatefulWidget {
+  const InfoApoioPage({super.key});
   @override
-  State<InfoSintomasPage> createState() => _InfoSintomasPage();
+  State<InfoApoioPage> createState() => _InfoApoioPage();
 }
 
-class _InfoSintomasPage extends State<InfoSintomasPage> {
-  List<Sintomas> listaSintomas = [];
+class _InfoApoioPage extends State<InfoApoioPage> {
+  List<Apoio> listaApoio = [];
 
   @override
   void initState() {
@@ -22,7 +22,7 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
   }
 
   loadData() async {
-    listaSintomas = await SintomasDao().listarSintomas();
+    listaApoio = await ApoioDao().listarApoio();
     setState(() {});
   }
 
@@ -56,9 +56,9 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
             width: 80,
             height: 80,
           ),
-          SizedBox(width: 30),
+          SizedBox(width: 40),
           Text(
-            'Sintomas',
+            'Apoio',
             style: GoogleFonts.lobster(
               color: Color(0xFFF4EEDD),
               fontSize: 45,
@@ -80,7 +80,7 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
               Padding(
                 padding: const EdgeInsets.all(5),
                 child: Image.asset(
-                  'assets/images/Fumante.png',
+                  'assets/images/ApoioMeninasAbracadas.png',
                   height: 225,
                   fit: BoxFit.contain,
                 ),
@@ -94,12 +94,12 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: ListView.builder(
-                    itemCount: listaSintomas.length,
+                    itemCount: listaApoio.length,
                     itemBuilder: (context, i) {
                       return Padding(
                         padding: const EdgeInsets.only(bottom: 12),
                         child: Text(
-                          listaSintomas[i].texto,
+                          listaApoio[i].texto,
                           textAlign: TextAlign.justify,
                           style: GoogleFonts.adamina(
                             color: Colors.black,

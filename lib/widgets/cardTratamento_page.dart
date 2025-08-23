@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flowerslung/widgets/cardSintomas_page.dart';
-import 'package:flowerslung/domain/sintomas.dart';
-import 'package:flowerslung/db/sintomas_dao.dart';
+import 'package:flowerslung/widgets/cardTratamento_page.dart';
+import 'package:flowerslung/domain/tratamento.dart';
+import 'package:flowerslung/db/tratamento_dao.dart';
 import 'package:flowerslung/pages/menuInfo_page.dart';
 import 'package:flowerslung/pages/menu_page.dart';
 
-class CardSintomas extends StatelessWidget {
+class CardTratamento extends StatelessWidget {
   String texto;
-  CardSintomas({required this.texto, super.key});
+  CardTratamento({required this.texto, super.key});
 
   @override
   Widget build(BuildContext context) {
