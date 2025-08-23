@@ -1,6 +1,6 @@
 import 'package:flowerslung/db/comunidade_dao.dart';
 import 'package:flowerslung/domain/comunidade.dart';
-import 'package:flowerslung/escreverMensagem_page.dart';
+import 'package:flowerslung/pages/escreverMensagem_page.dart';
 import 'package:flowerslung/widgets/cardComunidade_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -40,7 +40,7 @@ class _ComunidadePageState extends State<ComunidadePage> {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: buildAppBar(),
-          body: buildListView() ,
+          body: buildListView(),
         ),
       ),
     );
@@ -62,50 +62,60 @@ class _ComunidadePageState extends State<ComunidadePage> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(style:
-            ElevatedButton.styleFrom(
-                backgroundColor:Color(0xFFa54d3b)),
-              onPressed:(){
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                        builder: (context) {
-                        return EscreverMensagemPage();
-                      },
-                    ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFa54d3b),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return EscreverMensagemPage();
+                    },
+                  ),
                 );
-              }, child: Text('Escrever',
-            style: TextStyle(
-            color: Colors.white,
-                fontSize: 23,
-                fontWeight: FontWeight.w700,)
-                )
-            ),
-            SizedBox(width: 30),
-            ElevatedButton(style:
-            ElevatedButton.styleFrom(backgroundColor:Color(0xFFa54d3b)),
-                onPressed: (){
-                  Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                        builder: (context) {
-                        return MenuPage();
-                     },
-              )
-            );
-            }, child: Text('Voltar',
+              },
+              child: Text(
+                'Escrever',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 23,
-                  fontWeight: FontWeight.w700,)
-            )
-            )
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
+            SizedBox(width: 30),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFa54d3b),
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return MenuPage();
+                    },
+                  ),
+                );
+              },
+              child: Text(
+                'Voltar',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 23,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
           ],
         ),
         SizedBox(height: 30),
       ],
     );
   }
+
   buildAppBar() {
     return AppBar(
       automaticallyImplyLeading: false,

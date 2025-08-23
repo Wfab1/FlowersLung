@@ -1,4 +1,4 @@
-import 'package:flowerslung/escreverMensagem_page.dart';
+import 'package:flowerslung/pages/escreverMensagem_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flowerslung/domain/comunidade.dart';
 import 'package:google_fonts/google_fonts.dart';
