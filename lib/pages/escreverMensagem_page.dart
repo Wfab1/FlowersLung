@@ -1,7 +1,7 @@
-import 'package:flowerslung/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:path/path.dart';
+import 'package:flowerslung/pages/comunidade_page.dart';
 
 class EscreverMensagemPage extends StatefulWidget {
   const EscreverMensagemPage({super.key});
@@ -80,12 +80,20 @@ buildListView() {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-              decoration: BoxDecoration(
-                color: Color(0xFFd3b360),
-                borderRadius: BorderRadius.circular(30),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFd3b360),
               ),
+              onPressed: () {
+                //Navigator.push(
+                 // context as BuildContext,
+                  //MaterialPageRoute(
+                   // builder: (context) {
+                    //  return ComunidadePage();
+                   // },
+                  //),
+                //);
+              },
               child: Text(
                 'Enviar',
                 style: GoogleFonts.openSans(
@@ -101,14 +109,14 @@ buildListView() {
                 backgroundColor: Color(0xFFd3b360),
               ),
               onPressed: () {
-                Navigator.push(
-                  context as BuildContext,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return MenuPage();
-                    },
-                  ),
-                );
+               // Navigator.push(
+                 // context as BuildContext,
+                 // MaterialPageRoute(
+                 //   builder: (context) {
+                   //   return ComunidadePage();
+                   // },
+                 // ),
+                //);
               },
               child: Text(
                 'Voltar',

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flowerslung/domain/apoio.dart';
+import 'package:flowerslung/domain/tratamento.dart';
 
-class CardApoio extends StatelessWidget {
-  final Apoio apoio;
+class CardTratamento extends StatelessWidget {
+  final Tratamento tratamento;
 
-  CardApoio({required this.apoio, super.key});
-
+  CardTratamento ({required this.tratamento , super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,14 +24,14 @@ class CardApoio extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                    Icons.favorite,
+                    Icons.medical_services,
                     color: Colors.black,
                     size: 24,
                   ),
                   SizedBox(width: 8),
                   Flexible(
                     child: Text(
-                      apoio.titulo,
+                      tratamento.titulo,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.adamina(
                         color: Colors.black,
@@ -47,7 +46,7 @@ class CardApoio extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.0),
               child: Text(
-                apoio.subtitulo,
+                tratamento.subtitulo,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.adamina(
                   color: Colors.black,
@@ -66,7 +65,7 @@ class CardApoio extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                apoio.texto,
+                tratamento.texto,
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.adamina(
                   color: Colors.black,

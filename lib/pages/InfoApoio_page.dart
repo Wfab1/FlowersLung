@@ -45,6 +45,7 @@ class _InfoApoioPage extends State<InfoApoioPage> {
 
   buildAppBar() {
     return AppBar(
+      automaticallyImplyLeading: false,
       toolbarHeight: 100,
       centerTitle: true,
       backgroundColor: Color(0xFFa54d3b),
@@ -69,7 +70,7 @@ class _InfoApoioPage extends State<InfoApoioPage> {
     );
   }
 
-  Widget buildListView() {
+  buildListView() {
     return Column(
       children: [
         Expanded(
@@ -86,26 +87,17 @@ class _InfoApoioPage extends State<InfoApoioPage> {
               ),
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.all(16),
-                  margin: const EdgeInsets.all(10),
+                  padding: EdgeInsets.all(16),
+                  margin: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: Color(0xFFD7AE5E),
+                    color: Colors.transparent,
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: ListView.builder(
                     itemCount: listaApoio.length,
                     itemBuilder: (context, i) {
-                      return Padding(
-                        padding: const EdgeInsets.only(bottom: 12),
-                        child: Text(
-                          listaApoio[i].texto,
-                          textAlign: TextAlign.justify,
-                          style: GoogleFonts.adamina(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
+                      return CardApoio(
+                        apoio: listaApoio[i],
                       );
                     },
                   ),
@@ -114,6 +106,7 @@ class _InfoApoioPage extends State<InfoApoioPage> {
             ],
           ),
         ),
+
         SizedBox(height: 20),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
