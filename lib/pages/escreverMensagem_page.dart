@@ -109,14 +109,14 @@ buildListView() {
                 backgroundColor: Color(0xFFd3b360),
               ),
               onPressed: () {
-                Navigator.push(
-                  context as BuildContext,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return ComunidadePage();
-                    },
-                  ),
-                );
+               // Navigator.push(
+                 // context as BuildContext,
+                 // MaterialPageRoute(
+                 //   builder: (context) {
+                   //   return ComunidadePage();
+                   // },
+                 // ),
+                //);
               },
               child: Text(
                 'Voltar',
