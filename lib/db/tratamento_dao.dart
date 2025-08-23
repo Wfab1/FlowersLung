@@ -16,7 +16,6 @@ class TratamentoDao {
       Tratamento tratamento = Tratamento.fromJson(json);
       listaTratamento.add(tratamento);
     }
-
     return listaTratamento;
   }
 }

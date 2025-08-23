@@ -14,7 +14,6 @@ class Tratamento {
     subtitulo = json['subtitulo'];
     texto = json['texto'];
   }
-
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
     data['titulo'] = titulo;

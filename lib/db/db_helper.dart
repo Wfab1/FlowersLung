@@ -21,7 +21,6 @@ class DBHelper {
     return database;
   }
 
-
   Future<void> onCreate(Database db, int version) async {
     String sql = '''CREATE TABLE Comunidade (
      id INTEGER PRIMARY KEY AUTOINCREMENT,
