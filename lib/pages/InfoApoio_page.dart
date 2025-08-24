@@ -78,7 +78,7 @@ class _InfoApoioPage extends State<InfoApoioPage> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
-                padding: const EdgeInsets.all(5),
+                padding: EdgeInsets.all(5),
                 child: Image.asset(
                   'assets/images/ApoioMeninasAbracadas.png',
                   height: 225,

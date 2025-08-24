@@ -25,7 +25,6 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
     listaSintomas = await SintomasDao().listarSintomas();
     setState(() {});
   }
-
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -69,7 +69,6 @@ class _InfoTratamentoPage extends State<InfoTratamentoPage> {
       ),
     );
   }
-
   buildListView() {
     return Column(
       children: [
