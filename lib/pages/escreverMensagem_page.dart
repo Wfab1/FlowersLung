@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:path/path.dart';
-import 'package:flowerslung/pages/comunidade_page.dart';
 
 class EscreverMensagemPage extends StatefulWidget {
   const EscreverMensagemPage({super.key});
   @override
   State<EscreverMensagemPage> createState() => _EscreverMensagemPage();
 }
+
 
 class _EscreverMensagemPage extends State<EscreverMensagemPage> {
   @override
@@ -17,12 +16,13 @@ class _EscreverMensagemPage extends State<EscreverMensagemPage> {
         child: Scaffold(
           backgroundColor: Color(0xFFf4eedd),
           appBar: buildAppBar(),
-          body: buildListView(),
+          body: buildListView(context),
         ),
       ),
     );
   }
 }
+
 
 buildAppBar() {
   return AppBar(
@@ -56,7 +56,8 @@ buildAppBar() {
   );
 }
 
-buildListView() {
+
+Widget buildListView(BuildContext context) {
   return Column(
     children: [
       Expanded(
@@ -85,14 +86,6 @@ buildListView() {
                 backgroundColor: Color(0xFFd3b360),
               ),
               onPressed: () {
-                //Navigator.push(
-                 // context as BuildContext,
-                  //MaterialPageRoute(
-                   // builder: (context) {
-                    //  return ComunidadePage();
-                   // },
-                  //),
-                //);
               },
               child: Text(
                 'Enviar',
@@ -109,14 +102,7 @@ buildListView() {
                 backgroundColor: Color(0xFFd3b360),
               ),
               onPressed: () {
-               // Navigator.push(
-                 // context as BuildContext,
-                 // MaterialPageRoute(
-                 //   builder: (context) {
-                   //   return ComunidadePage();
-                   // },
-                 // ),
-                //);
+                Navigator.pop(context);
               },
               child: Text(
                 'Voltar',
@@ -133,6 +119,7 @@ buildListView() {
     ],
   );
 }
+
 
 buildTextField(String label, {bool obscureText = false, int maxLines = 1}) {
   return TextField(
@@ -158,3 +145,4 @@ buildTextField(String label, {bool obscureText = false, int maxLines = 1}) {
     ),
   );
 }
+

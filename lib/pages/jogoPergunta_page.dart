@@ -1,14 +1,34 @@
+import 'package:flowerslung/db/pergunta_dao.dart';
+import 'package:flowerslung/domain/pergunta.dart';
+import 'package:flowerslung/pages/mensagemFimJogo_page.dart';
+import 'package:flowerslung/pages/mensagemRespostaCorreta_page.dart';
+import 'package:flowerslung/pages/mensagemRespostaErrada_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class JogoPergunta27Page extends StatefulWidget {
-  const JogoPergunta27Page({super.key});
+class JogoPerguntaPage extends StatefulWidget {
+  const JogoPerguntaPage({super.key});
 
   @override
-  State<JogoPergunta27Page> createState() => _JogoPergunta27Page();
+  State<JogoPerguntaPage> createState() => _JogoPerguntaPage();
 }
 
-class _JogoPergunta27Page extends State<JogoPergunta27Page> {
+class _JogoPerguntaPage extends State<JogoPerguntaPage> {
+  List<Pergunta> listaPerguntas = [];
+  int indexSelecionado = 0;
+
+  @override
+  void initState() {
+    super.initState();
+
+    loadData();
+  }
+
+  loadData() async {
+    listaPerguntas = await PerguntaDao().listarPerguntas(); // 3 seg
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,12 +40,18 @@ class _JogoPergunta27Page extends State<JogoPergunta27Page> {
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: buildListView(40, 70, 25, 35, 45),
+        body: buildListView(15, 30, 0, 10, 20),
       ),
     );
   }
 
-  buildListView(int pontos, int pontosTotais, int valorEliminar, int valorUniversitarios, int valorPular,) {
+  buildListView(
+    int pontos,
+    int pontosTotais,
+    int valorEliminar,
+    int valorUniversitarios,
+    int valorPular,
+  ) {
     return SafeArea(
       child: SingleChildScrollView(
         padding: EdgeInsets.only(bottom: 24),
@@ -66,15 +92,20 @@ class _JogoPergunta27Page extends State<JogoPergunta27Page> {
                             ],
                           ),
                         ),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 8,
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xFFa54d3b),
                           ),
-                          decoration: BoxDecoration(
-                            color: Color(0xFFa54d3b),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return MensagemFimJogoPage();
+                                },
+                              ),
+                            );
+                          },
                           child: Text(
                             'Parar',
                             style: GoogleFonts.openSans(
@@ -90,42 +121,7 @@ class _JogoPergunta27Page extends State<JogoPergunta27Page> {
                 ),
               ],
             ),
-            SizedBox(height: 8),
-            Container(
-              width: double.infinity,
-              margin: EdgeInsets.symmetric(horizontal: 12),
-              padding: EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Color(0xFFf4eedd),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Text(
-                'Como o exercício físico moderado pode ajudar um paciente com câncer de pulmão?',
-                textAlign: TextAlign.left,
-                style: GoogleFonts.inter(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-            ),
-            SizedBox(height: 8),
-
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 16),
-              decoration: BoxDecoration(
-                color: Color(0xFFf4eedd),
-                borderRadius: BorderRadius.circular(24),
-              ),
-              child: Column(
-                children: [
-                  opcao('A', 'Substituindo a quimioterapia'),
-                  opcao('B', 'Reduzindo o número de sessões de radioterapia'),
-                  opcao('C', 'Melhorando a respiração e o bem-estar geral'),
-                  opcao('D', 'Aumentando o risco de recaída'),
-                ],
-              ),
-            ),
-
+            buildPergunta(),
             SizedBox(height: 8),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12),
@@ -194,44 +190,116 @@ class _JogoPergunta27Page extends State<JogoPergunta27Page> {
     );
   }
 
-  opcao(String letra, String texto) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-        decoration: BoxDecoration(
-          color: Color(0xFFB95D35),
-          borderRadius: BorderRadius.circular(32),
+  buildPergunta() {
+    if (listaPerguntas.isEmpty) {
+      return CircularProgressIndicator();
+    }
+
+    return Column(
+      children: [
+        SizedBox(height: 8),
+        Container(
+          width: double.infinity,
+          margin: EdgeInsets.symmetric(horizontal: 12),
+          padding: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: Color(0xFFf4eedd),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Text(
+            listaPerguntas[indexSelecionado].pergunta,
+            textAlign: TextAlign.left,
+            style: GoogleFonts.inter(fontSize: 20, fontWeight: FontWeight.w700),
+          ),
         ),
-        child: Row(
-          children: [
-            Container(
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Color(0xFF7A2E1E),
-              ),
-              child: Text(
-                letra,
-                style: GoogleFonts.inter(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+        SizedBox(height: 8),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 16),
+          decoration: BoxDecoration(
+            color: Color(0xFFf4eedd),
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: Column(
+            children: [
+              opcao('A', listaPerguntas[indexSelecionado].alternativa1),
+              opcao('B', listaPerguntas[indexSelecionado].alternativa2),
+              opcao('C', listaPerguntas[indexSelecionado].alternativa3),
+              opcao('D', listaPerguntas[indexSelecionado].alternativa4),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  opcao(String letra, String texto) {
+    return InkWell(
+      onTap: () {
+        if (letra == listaPerguntas[indexSelecionado].respostaCorreta) {
+          print('Resposta certa');
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return MensagemRespostaCorretaPage();
+              },
+            ),
+          );
+          if (indexSelecionado < listaPerguntas.length - 1) {
+            setState(() {
+              indexSelecionado++;
+            });
+          }
+        } else {
+          print('Resposta errada');
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return MensagemRespostaErradaPage();
+              },
+            ),
+          );
+        }
+      },
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          decoration: BoxDecoration(
+            color: Color(0xFFB95D35),
+            borderRadius: BorderRadius.circular(32),
+          ),
+          child: Row(
+            children: [
+              Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFF7A2E1E),
+                ),
+                child: Text(
+                  letra,
+                  style: GoogleFonts.inter(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
-            ),
-            SizedBox(width: 16),
-            Expanded(
-              child: Text(
-                texto,
-                style: GoogleFonts.inter(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
+              SizedBox(width: 16),
+              Expanded(
+                child: Text(
+                  texto,
+                  style: GoogleFonts.inter(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
