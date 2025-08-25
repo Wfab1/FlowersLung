@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flowerslung/domain/sintomas.dart';
+import 'package:flowerslung/domain/tratamento.dart';
 
-class CardSintomas extends StatelessWidget {
-  final Sintomas sintoma;
+class CardTratamento extends StatelessWidget {
+  final Tratamento tratamento;
 
-  CardSintomas({required this.sintoma, super.key});
-
+  CardTratamento ({required this.tratamento , super.key});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,14 +24,14 @@ class CardSintomas extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                    Icons.warning,
+                    Icons.medical_services,
                     color: Colors.black,
                     size: 24,
                   ),
                   SizedBox(width: 8),
                   Flexible(
                     child: Text(
-                      sintoma.titulo,
+                      tratamento.titulo,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.adamina(
                         color: Colors.black,
@@ -44,11 +43,10 @@ class CardSintomas extends StatelessWidget {
                 ],
               ),
             ),
-
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.0),
               child: Text(
-                sintoma.subtitulo,
+                tratamento.subtitulo,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.adamina(
                   color: Colors.black,
@@ -67,7 +65,7 @@ class CardSintomas extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                sintoma.texto,
+                tratamento.texto,
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.adamina(
                   color: Colors.black,

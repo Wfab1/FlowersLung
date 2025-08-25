@@ -1,4 +1,4 @@
-import 'package:flowerslung/escreverMensagem_page.dart';
+import 'package:flowerslung/pages/escreverMensagem_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flowerslung/domain/comunidade.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -65,7 +65,7 @@ class _CardComunidadeState extends State<CardComunidade> {
                           Text(
                             titulo,
                             style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w700,
                               fontSize: 16,
                             ),
                           ),
@@ -101,7 +101,7 @@ class _CardComunidadeState extends State<CardComunidade> {
                         children: [
                           Text(
                             'Comentário',
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.w700),
                           ),
                           Text(nomeComentador, style: TextStyle(fontSize: 14)),
                         ],

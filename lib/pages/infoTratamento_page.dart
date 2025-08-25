@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flowerslung/widgets/cardSintomas_page.dart';
-import 'package:flowerslung/domain/sintomas.dart';
-import 'package:flowerslung/db/sintomas_dao.dart';
+import 'package:flowerslung/widgets/cardTratamento_page.dart';
+import 'package:flowerslung/domain/tratamento.dart';
+import 'package:flowerslung/db/tratamento_dao.dart';
 import 'menuInfo_page.dart';
 import 'menu_page.dart';
 
-class InfoSintomasPage extends StatefulWidget {
-  const InfoSintomasPage({super.key});
+class InfoTratamentoPage extends StatefulWidget {
+  const InfoTratamentoPage({super.key});
   @override
-  State<InfoSintomasPage> createState() => _InfoSintomasPage();
+  State<InfoTratamentoPage> createState() => _InfoTratamentoPage();
 }
 
-class _InfoSintomasPage extends State<InfoSintomasPage> {
-  List<Sintomas> listaSintomas = [];
+class _InfoTratamentoPage extends State<InfoTratamentoPage> {
+  List<Tratamento> listaTratamento = [];
 
   @override
   void initState() {
@@ -22,7 +22,7 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
   }
 
   loadData() async {
-    listaSintomas = await SintomasDao().listarSintomas();
+    listaTratamento = await TratamentoDao().listarTratamento();
     setState(() {});
   }
 
@@ -58,7 +58,7 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
           ),
           SizedBox(width: 30),
           Text(
-            'Sintomas',
+            'Tratamento',
             style: GoogleFonts.lobster(
               color: Color(0xFFF4EEDD),
               fontSize: 45,
@@ -80,7 +80,7 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
               Padding(
                 padding: EdgeInsets.all(5),
                 child: Image.asset(
-                  'assets/images/Fumante.png',
+                  'assets/images/Medica.png',
                   height: 225,
                   fit: BoxFit.contain,
                 ),
@@ -95,10 +95,10 @@ class _InfoSintomasPage extends State<InfoSintomasPage> {
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: ListView.builder(
-                    itemCount: listaSintomas.length,
+                    itemCount: listaTratamento.length,
                     itemBuilder: (context, i) {
-                      return CardSintomas(
-                        sintoma: listaSintomas[i],
+                      return CardTratamento(
+                        tratamento: listaTratamento[i],
                       );
                     },
                   ),

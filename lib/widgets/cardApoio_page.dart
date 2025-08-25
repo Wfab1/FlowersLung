@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flowerslung/domain/sintomas.dart';
+import 'package:flowerslung/domain/apoio.dart';
 
-class CardSintomas extends StatelessWidget {
-  final Sintomas sintoma;
+class CardApoio extends StatelessWidget {
+  final Apoio apoio;
 
-  CardSintomas({required this.sintoma, super.key});
+  CardApoio({required this.apoio, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,14 +25,14 @@ class CardSintomas extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(
-                    Icons.warning,
+                    Icons.favorite,
                     color: Colors.black,
                     size: 24,
                   ),
                   SizedBox(width: 8),
                   Flexible(
                     child: Text(
-                      sintoma.titulo,
+                      apoio.titulo,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.adamina(
                         color: Colors.black,
@@ -44,11 +44,10 @@ class CardSintomas extends StatelessWidget {
                 ],
               ),
             ),
-
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 12.0),
               child: Text(
-                sintoma.subtitulo,
+                apoio.subtitulo,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.adamina(
                   color: Colors.black,
@@ -67,7 +66,7 @@ class CardSintomas extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Text(
-                sintoma.texto,
+                apoio.texto,
                 textAlign: TextAlign.justify,
                 style: GoogleFonts.adamina(
                   color: Colors.black,

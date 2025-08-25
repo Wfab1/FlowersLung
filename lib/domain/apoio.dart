@@ -1,14 +1,15 @@
-class Sintomas {
+class Apoio {
   late String titulo;
   late String subtitulo;
   late String texto;
 
-  Sintomas({
+  Apoio({
     required this.titulo,
     required this.subtitulo,
     required this.texto,
   });
-  Sintomas.fromJson(Map<String, dynamic> json) {
+
+  Apoio.fromJson(Map<String, dynamic> json) {
     titulo = json['titulo'];
     subtitulo = json['subtitulo'];
     texto = json['texto'];

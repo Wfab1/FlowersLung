@@ -1,13 +1,12 @@
-import 'package:flowerslung/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:path/path.dart';
 
 class EscreverMensagemPage extends StatefulWidget {
   const EscreverMensagemPage({super.key});
   @override
   State<EscreverMensagemPage> createState() => _EscreverMensagemPage();
 }
+
 
 class _EscreverMensagemPage extends State<EscreverMensagemPage> {
   @override
@@ -17,12 +16,13 @@ class _EscreverMensagemPage extends State<EscreverMensagemPage> {
         child: Scaffold(
           backgroundColor: Color(0xFFf4eedd),
           appBar: buildAppBar(),
-          body: buildListView(),
+          body: buildListView(context),
         ),
       ),
     );
   }
 }
+
 
 buildAppBar() {
   return AppBar(
@@ -56,7 +56,8 @@ buildAppBar() {
   );
 }
 
-buildListView() {
+
+Widget buildListView(BuildContext context) {
   return Column(
     children: [
       Expanded(
@@ -80,12 +81,12 @@ buildListView() {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 14),
-              decoration: BoxDecoration(
-                color: Color(0xFFd3b360),
-                borderRadius: BorderRadius.circular(30),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xFFd3b360),
               ),
+              onPressed: () {
+              },
               child: Text(
                 'Enviar',
                 style: GoogleFonts.openSans(
@@ -95,20 +96,13 @@ buildListView() {
                 ),
               ),
             ),
-            SizedBox(width: 16),
+            SizedBox(width: 16.01),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFFd3b360),
               ),
               onPressed: () {
-                Navigator.push(
-                  context as BuildContext,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return MenuPage();
-                    },
-                  ),
-                );
+                Navigator.pop(context);
               },
               child: Text(
                 'Voltar',
@@ -125,6 +119,7 @@ buildListView() {
     ],
   );
 }
+
 
 buildTextField(String label, {bool obscureText = false, int maxLines = 1}) {
   return TextField(
@@ -150,3 +145,4 @@ buildTextField(String label, {bool obscureText = false, int maxLines = 1}) {
     ),
   );
 }
+
