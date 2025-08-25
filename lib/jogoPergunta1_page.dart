@@ -1,15 +1,13 @@
+import 'package:flowerslung/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 
 class JogoPergunta1Page extends StatefulWidget {
   const JogoPergunta1Page({super.key});
 
-
   @override
   State<JogoPergunta1Page> createState() => _JogoPergunta1Page();
 }
-
 
 class _JogoPergunta1Page extends State<JogoPergunta1Page> {
   @override
@@ -28,8 +26,13 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
     );
   }
 
-
-  buildListView(int pontos, int pontosTotais, int valorEliminar, int valorUniversitarios, int valorPular,) {
+  buildListView(
+    int pontos,
+    int pontosTotais,
+    int valorEliminar,
+    int valorUniversitarios,
+    int valorPular,
+  ) {
     return SafeArea(
       child: SingleChildScrollView(
         padding: EdgeInsets.only(bottom: 24),
@@ -70,15 +73,23 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
                             ],
                           ),
                         ),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 8,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xFFa54d3b),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
+                        Padding(padding: EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 8,),
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xFFa54d3b)),
+                          onPressed: () {
+                          //  Navigator.push(
+                               // context,
+                               // MaterialPageRoute(
+                                //  builder: (context) {
+                                 //   return MenuPage();
+                                 // },
+                               // )
+                           // );
+                          },
                           child: Text(
                             'Parar',
                             style: GoogleFonts.openSans(
@@ -113,8 +124,6 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
               ),
             ),
             SizedBox(height: 8),
-
-
             Container(
               margin: EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
@@ -130,7 +139,6 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
                 ],
               ),
             ),
-
 
             SizedBox(height: 8),
             Padding(
@@ -200,7 +208,6 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
     );
   }
 
-
   opcao(String letra, String texto) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -229,12 +236,24 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
             ),
             SizedBox(width: 16),
             Expanded(
-              child: Text(
-                texto,
-                style: GoogleFonts.inter(
-                  fontSize: 16,
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
+              child:  TextButton(
+                onPressed: () {
+                  //Navigator.push(
+                    //context,
+                   // MaterialPageRoute(
+                   //   builder: (context) {
+                     //   return EscreverMensagemPage();
+                     // },
+                    //),
+                  //);
+                },
+                child: Text(
+                  texto,
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
             ),
@@ -243,7 +262,6 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
       ),
     );
   }
-
 
   ajuda(String custo, String texto, String iconeFlor, String iconeAjuda) {
     return Column(
@@ -263,7 +281,7 @@ class _JogoPergunta1Page extends State<JogoPergunta1Page> {
           ],
         ),
         SizedBox(height: 4),
-        Image.asset(iconeAjuda, height: 32),
+        ElevatedButton(onPressed: (){}, child: Image.asset(iconeAjuda, height: 32),),
         SizedBox(height: 4),
         Text(texto, style: GoogleFonts.inter(fontSize: 14)),
       ],

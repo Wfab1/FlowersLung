@@ -31,7 +31,12 @@ class DBHelper {
     );
     CREATE TABLE informacoesSintomas(
     id INTERGER PRIMARY KEY AUTOINCREMENT,
-    texto TEXT)''';
+    texto TEXT)
+    
+    CREATE TABLE mensagemRespostaErrada(
+    id INTERGER PRIMARY KEY AUTOINCREMENT,
+    mensagem TEXT,
+    pontos INTERGER)''';
 
     await db.execute(sql);
 
@@ -77,6 +82,10 @@ class DBHelper {
 
     sql=
     " locaINSERT INTO informacoesSintomas (texto) VALUES (''• Também é comum: fraqueza, inchaço dos gânglios, perda de peso ou pressão no peito.',');";
+    await db.execute(sql);
+
+    sql=
+    " locaINSERT INTO mensagemRespostaErrada (mensagem, pontos) VALUES ('Você errou, que pena!', 12');";
     await db.execute(sql);
   }
 }
