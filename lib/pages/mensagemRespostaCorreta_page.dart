@@ -2,15 +2,15 @@ import 'package:flowerslung/pages/mensagemFimJogo_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MensagemRespostaErradaPage extends StatefulWidget {
-  const MensagemRespostaErradaPage({super.key});
+class MensagemRespostaCorretaPage extends StatefulWidget {
+  const MensagemRespostaCorretaPage({super.key});
   @override
-  State<MensagemRespostaErradaPage> createState() =>
-      _MensagemRespostaErradaPageState();
+  State<MensagemRespostaCorretaPage> createState() =>
+      _MensagemRespostaCorretaPageState();
 }
 
-class _MensagemRespostaErradaPageState
-    extends State<MensagemRespostaErradaPage> {
+class _MensagemRespostaCorretaPageState
+    extends State<MensagemRespostaCorretaPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,13 +39,27 @@ class _MensagemRespostaErradaPageState
             color: Color(0xFFFDF6E3),
             borderRadius: BorderRadius.circular(16),
           ),
-          child: Text(
-            'Que pena! Você errou \nTente novamente',
+          child: RichText(
             textAlign: TextAlign.center,
-            style: GoogleFonts.lora(
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
-              color: Colors.black,
+            text: TextSpan(
+              style: GoogleFonts.lora(
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+              ),
+              children: [
+                TextSpan(
+                  text: 'Parabéns!\nResposta correta \nVocê conseguiu: \n 10',
+                ),
+                WidgetSpan(
+                  alignment: PlaceholderAlignment.middle,
+                  child: Image.asset(
+                    'assets/images/FlorPontuacao.png',
+                    height: 30,
+                    width: 30,
+                  ),
+                ),
+              ],
             ),
           ),
         ),

@@ -1,16 +1,27 @@
-import 'package:flowerslung/pages/mensagemFimJogo_page.dart';
+import 'package:flowerslung/pages/jogoPergunta_page.dart';
+import 'package:flowerslung/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MensagemRespostaErradaPage extends StatefulWidget {
-  const MensagemRespostaErradaPage({super.key});
+class MensageminicioJogoPage extends StatefulWidget {
+  const MensageminicioJogoPage({super.key});
   @override
-  State<MensagemRespostaErradaPage> createState() =>
-      _MensagemRespostaErradaPageState();
+  State<MensageminicioJogoPage> createState() => _MensagemInicioJogoPageState();
 }
 
-class _MensagemRespostaErradaPageState
-    extends State<MensagemRespostaErradaPage> {
+class _MensagemInicioJogoPageState extends State<MensageminicioJogoPage> {
+  @override
+  void initState() {
+    super.initState();
+
+    Future.delayed(const Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const JogoPerguntaPage()),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -40,7 +51,7 @@ class _MensagemRespostaErradaPageState
             borderRadius: BorderRadius.circular(16),
           ),
           child: Text(
-            'Que pena! Você errou \nTente novamente',
+            'Prepare-se! \nO jogo vai começar',
             textAlign: TextAlign.center,
             style: GoogleFonts.lora(
               fontSize: 24,
@@ -65,31 +76,13 @@ class _MensagemRespostaErradaPageState
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return MensagemFimJogoPage();
+                        return MenuPage();
                       },
                     ),
                   );
                 },
                 child: Text(
                   'Parar',
-                  style: GoogleFonts.openSans(
-                    color: Colors.black,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
-              SizedBox(width: 48),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFf4eedd),
-                  minimumSize: Size(60, 60),
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  'Continuar',
                   style: GoogleFonts.openSans(
                     color: Colors.black,
                     fontSize: 24,

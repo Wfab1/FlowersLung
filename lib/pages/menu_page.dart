@@ -1,9 +1,10 @@
-import 'package:flowerslung/jogoPergunta1_page.dart';
+import 'package:flowerslung/pages/mensagemInicioJogo_page.dart';
+import 'package:flowerslung/pages/jogoPergunta_page.dart';
 import 'package:flowerslung/pages/comunidade_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'menuInfo_page.dart';
+import 'package:flowerslung/pages/menuInfo_page.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -25,7 +26,7 @@ class _MenuPageState extends State<MenuPage> {
         child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: buildAppBar(),
-          body: buildListView() ,
+          body: buildListView(),
         ),
       ),
     );
@@ -69,7 +70,11 @@ class _MenuPageState extends State<MenuPage> {
                   ),
                 );
               },
-              child: Image.asset('assets/images/IconPulmao.png', height: 70, width: 80),
+              child: Image.asset(
+                'assets/images/IconPulmao.png',
+                height: 70,
+                width: 80,
+              ),
             ),
             Text(
               'Informações',
@@ -88,17 +93,22 @@ class _MenuPageState extends State<MenuPage> {
           children: [
             Column(
               children: [
-                ElevatedButton(onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return JogoPergunta1Page();
-                      },
-                    ),
-                  );
-                }, child:
-                  Image.asset('assets/images/IconJogar.png', height: 70, width: 80),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return MensageminicioJogoPage();
+                        },
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'assets/images/IconJogar.png',
+                    height: 70,
+                    width: 80,
+                  ),
                 ),
                 Text(
                   'Jogar',
@@ -112,17 +122,22 @@ class _MenuPageState extends State<MenuPage> {
             ),
             Column(
               children: [
-                ElevatedButton(onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return ComunidadePage();
-                      },
-                    ),
-                  );
-                }, child:
-                  Image.asset('assets/images/IconComunidade.png', width: 80,height: 70,),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return ComunidadePage();
+                        },
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'assets/images/IconComunidade.png',
+                    width: 80,
+                    height: 70,
+                  ),
                 ),
                 Text(
                   'Comunidade',
@@ -140,4 +155,3 @@ class _MenuPageState extends State<MenuPage> {
     );
   }
 }
-

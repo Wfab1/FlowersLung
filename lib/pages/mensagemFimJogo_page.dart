@@ -1,16 +1,14 @@
-import 'package:flowerslung/pages/mensagemFimJogo_page.dart';
+import 'package:flowerslung/pages/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MensagemRespostaErradaPage extends StatefulWidget {
-  const MensagemRespostaErradaPage({super.key});
+class MensagemFimJogoPage extends StatefulWidget {
+  const MensagemFimJogoPage({super.key});
   @override
-  State<MensagemRespostaErradaPage> createState() =>
-      _MensagemRespostaErradaPageState();
+  State<MensagemFimJogoPage> createState() => _MensagemFimJogoPageState();
 }
 
-class _MensagemRespostaErradaPageState
-    extends State<MensagemRespostaErradaPage> {
+class _MensagemFimJogoPageState extends State<MensagemFimJogoPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -39,13 +37,28 @@ class _MensagemRespostaErradaPageState
             color: Color(0xFFFDF6E3),
             borderRadius: BorderRadius.circular(16),
           ),
-          child: Text(
-            'Que pena! Você errou \nTente novamente',
+          child: RichText(
             textAlign: TextAlign.center,
-            style: GoogleFonts.lora(
-              fontSize: 24,
-              fontWeight: FontWeight.w700,
-              color: Colors.black,
+            text: TextSpan(
+              style: GoogleFonts.lora(
+                fontSize: 24,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
+              ),
+              children: [
+                TextSpan(
+                  text:
+                      'Parabéns! \nObrigado(a) por jogar! \nVocê conseguiu: \n10',
+                ),
+                WidgetSpan(
+                  alignment: PlaceholderAlignment.middle,
+                  child: Image.asset(
+                    'assets/images/FlorPontuacao.png',
+                    height: 30,
+                    width: 30,
+                  ),
+                ),
+              ],
             ),
           ),
         ),
@@ -65,31 +78,13 @@ class _MensagemRespostaErradaPageState
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return MensagemFimJogoPage();
+                        return MenuPage();
                       },
                     ),
                   );
                 },
                 child: Text(
-                  'Parar',
-                  style: GoogleFonts.openSans(
-                    color: Colors.black,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
-              SizedBox(width: 48),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFf4eedd),
-                  minimumSize: Size(60, 60),
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  'Continuar',
+                  'Menu Inicial',
                   style: GoogleFonts.openSans(
                     color: Colors.black,
                     fontSize: 24,
