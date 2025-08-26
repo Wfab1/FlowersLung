@@ -1,16 +1,10 @@
-import 'package:flowerslung/pages/menuInfo_page.dart';
-import 'package:flowerslung/partePulmaoBronquio_page.dart';
-import 'package:flowerslung/partePulmaoBronquiolos_page.dart';
-import 'package:flowerslung/partePulmaoDireito_page.dart';
-import 'package:flowerslung/partePulmaoEsquerdo_page.dart';
-import 'package:flowerslung/partePulmaoFluidoPleural_page.dart';
-import 'package:flowerslung/partePulmaoLobos_page.dart';
-import 'package:flowerslung/partePulmaoPleura_page.dart';
-import 'package:flowerslung/partePulmaoTraqueia_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flowerslung/db/pulmao_dao.dart';
+import 'package:flowerslung/domain/pulmao.dart';
+import 'package:flowerslung/pages/menuInfo_page.dart';
 import 'package:flowerslung/pages/menu_page.dart';
+import 'package:flowerslung/pages/pulmao_info_page.dart';
 
 class PulmaoPage extends StatefulWidget {
   const PulmaoPage({super.key});
@@ -19,11 +13,23 @@ class PulmaoPage extends StatefulWidget {
 }
 
 class _PulmaoPageState extends State<PulmaoPage> {
+  List<Pulmao> listaPulmao = [];
+
   @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  loadData() async {
+    listaPulmao = await PulmaoDao().listarPulmao();
+    setState(() {});
+  }
+
   build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xFFF4EEDD),
+        backgroundColor: const Color(0xFFF4EEDD),
         appBar: buildAppBar(),
         body: buildListView(),
       ),
@@ -35,7 +41,7 @@ class _PulmaoPageState extends State<PulmaoPage> {
       automaticallyImplyLeading: false,
       toolbarHeight: 100,
       centerTitle: true,
-      backgroundColor: Color(0xFFa54d3b),
+      backgroundColor: const Color(0xFFa54d3b),
       title: Row(
         children: [
           Image.asset(
@@ -43,11 +49,11 @@ class _PulmaoPageState extends State<PulmaoPage> {
             width: 80,
             height: 80,
           ),
-          SizedBox(width: 30),
+          const SizedBox(width: 30),
           Text(
             'Pulmão',
             style: GoogleFonts.lobster(
-              color: Color(0xFFF4EEDD),
+              color: const Color(0xFFF4EEDD),
               fontSize: 45,
               fontWeight: FontWeight.w700,
             ),
@@ -66,232 +72,46 @@ class _PulmaoPageState extends State<PulmaoPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset('assets/images/PulmaoNormal.png', width: 330),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFd3b360),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return partePulmaoBronquioPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: Text(
-                      '1',
-                      style: GoogleFonts.openSans(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 8),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFd3b360),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return partePulmaoDireitoPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: Text(
-                      '2',
-                      style: GoogleFonts.openSans(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 8),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFd3b360),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return partePulmaoEsquerdoPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: Text(
-                      '3',
-                      style: GoogleFonts.openSans(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 8),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFd3b360),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return partePulmaoTraqueiaPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: Text(
-                      '4',
-                      style: GoogleFonts.openSans(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
+                  for (int i = 1; i <= 4; i++) ...[
+                    buildNumeroButton(i),
+                    const SizedBox(width: 8),
+                  ]
                 ],
               ),
-
-              SizedBox(height: 12),
-
+              const SizedBox(height: 12),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(width: 8),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFd3b360),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return partePulmaoLobosPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: Text(
-                      '5',
-                      style: GoogleFonts.openSans(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 8),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFd3b360),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return partePulmaoBronquiolosPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: Text(
-                      '6',
-                      style: GoogleFonts.openSans(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 8),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFd3b360),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return partePulmaoPleuraPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: Text(
-                      '7',
-                      style: GoogleFonts.openSans(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 8),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFd3b360),
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return partePulmaoFluidoPleuralPage();
-                          },
-                        ),
-                      );
-                    },
-                    child: Text(
-                      '8',
-                      style: GoogleFonts.openSans(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ),
+                  for (int i = 5; i <= 8; i++) ...[
+                    buildNumeroButton(i),
+                    const SizedBox(width: 8),
+                  ]
                 ],
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             ],
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(bottom: 30),
+          padding: const EdgeInsets.only(bottom: 30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFa54d3b),
-                  minimumSize: Size(60, 60)
-                ),
+                    backgroundColor: const Color(0xFFa54d3b),
+                    minimumSize: const Size(60, 60)),
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return MenuPage();
+                        return const MenuPage();
                       },
                     ),
                   );
@@ -305,18 +125,17 @@ class _PulmaoPageState extends State<PulmaoPage> {
                   ),
                 ),
               ),
-              SizedBox(width: 30),
+              const SizedBox(width: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFa54d3b),
-                  minimumSize: Size(60, 60)
-                ),
+                    backgroundColor: const Color(0xFFa54d3b),
+                    minimumSize: const Size(60, 60)),
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return MenuInfoPage();
+                        return const MenuInfoPage();
                       },
                     ),
                   );
@@ -334,6 +153,30 @@ class _PulmaoPageState extends State<PulmaoPage> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget buildNumeroButton(int id) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: const Color(0xFFd3b360),
+      ),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PulmaoInfoPage(idPulmao: id),
+          ),
+        );
+      },
+      child: Text(
+        '$id',
+        style: GoogleFonts.openSans(
+          color: Colors.white,
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+        ),
+      ),
     );
   }
 }

@@ -96,7 +96,7 @@ Widget buildListView(BuildContext context) {
                 ),
               ),
             ),
-            SizedBox(width: 16),
+            SizedBox(width: 16.01),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xFFd3b360),
